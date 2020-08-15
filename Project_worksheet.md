@@ -71,8 +71,9 @@ Sample JSON:
 
 - Display data with trail description and surface-type
 - Search by surface typy
-- High risk: Add second API to provide trail address (bike API does not supply address)
-- High risk: Use local storage to save paths users want to try
+- High time risk: Allowing user to choose between MI and KMs
+- High time risk: Add second API to provide trail address (bike API does not supply address)
+- High time risk: Use local storage to save paths users want to try
 
 ## Project Schedule
 
@@ -82,7 +83,7 @@ Sample JSON:
 |Mon, Aug 17|Project approval / API: Adding Search to feed to API|Incomplete
 |Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
 |Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
-|Thurs, Aug 20|Get address | Incomplete
+|Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
 |Fri, Aug 21| Presentations | Incomplete
 
 ## Priority Matrix
@@ -98,7 +99,7 @@ Include a full list of features that have been prioritized based on the `Time an
 | CSS: Header, Footer, search section, results section, no results view, landing view | H | 8hrs| 0 | - |
 | Mobile Optimization | H | 5hrs| 0 | - |
 | Getting trail address | H | 8hrs| 0 | - |
-| Saving trails to try | H | 8hrs| 0 | - |
+| Picking KM or MI / Get Address / Saving trails to try | H | 8hrs| 0 | - |
 | Total | H | 43hrs| 0 | - |
 
 
