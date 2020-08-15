@@ -78,13 +78,13 @@ This schedule will be used to keep track of your progress throughout the week an
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-|  Day | Deliverable |High Level | Status
+|  Day |Deliverable| Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Monday, August 17| Project approval, then Header, Search  working in console|Incomplete
-|Tuesday, August 18| Displaying results on page including no results, working on mobile| Incomplete
-|Wednesday, August 19| Adding more parameters to search and results, as will as improved styling | Incomplete
-|Thursday, August 20| styled loading page, get address | Incomplete
+|Monday, August 17| Project approval / API: Adding Search to feed to API|Incomplete
+|Tuesday, August 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
+|Wednesday, August 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
+|Thursday, August 20|Get address | Incomplete
 |Friday, August 21| Presentations | Incomplete
 
 ## Priority Matrix
