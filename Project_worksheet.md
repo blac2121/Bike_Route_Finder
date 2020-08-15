@@ -57,14 +57,19 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### MVP 
 *These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Identify API and problems to solve 
+- Set up API and get data rending in the console  
+- Set up the following states: landing page, search result state, no results
+- Display data with trail name and length 
+- Search by trail length
+- Mobile compatibility
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
+- Add second API to provide trail directions (bike API does not supply address)
+- Display data with trail description and surface-type
+- Search by surface type
 - Use local storage to save user favorites
 
 ## Project Schedule
