@@ -2,7 +2,7 @@
 
 ## Project Name
 
-Trailblaze: Find Your Bike Path
+Trailblaze: Discover Bike Paths
 
 ## Project Description
 
