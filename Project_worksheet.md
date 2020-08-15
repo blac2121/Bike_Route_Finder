@@ -69,8 +69,8 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Display data with trail description and surface-type
 - Search by surface typy
-- Add second API to provide trail address (bike API does not supply address)
-- Use local storage to save paths users want to try
+- High risk: Add second API to provide trail address (bike API does not supply address)
+- High risk: Use local storage to save paths users want to try
 
 ## Project Schedule
 
@@ -81,11 +81,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day |Deliverable| Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Monday, August 17| Project approval / API: Adding Search to feed to API|Incomplete
-|Tuesday, August 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
-|Wednesday, August 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
-|Thursday, August 20|Get address | Incomplete
-|Friday, August 21| Presentations | Incomplete
+|Mon, August 17|Project approval / API: Adding Search to feed to API|Incomplete
+|Tues, August 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
+|Wed, August 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
+|Thurs, August 20|Get address | Incomplete
+|Fri, August 21| Presentations | Incomplete
 
 ## Priority Matrix
 
@@ -99,11 +99,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Search to feed to API | H | 5hrs| 3.5hrs | 3.5hrs |
-| Base HTML: Header, Footer, search section, results section, no results view, landing view | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS: Header, Footer, search section, results section, no results view, landing view | H | 5hrs| 2.5hrs | 2.5hrs |
-| Mobile Optimization | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding Search to feed to API | H | 6hrs| 0 | - |
+| Base HTML: Header, Footer, search section, results section, no results view, landing view | H | 8hrs| 0 | - |
+| CSS: Header, Footer, search section, results section, no results view, landing view | H | 8hrs| 0 | - |
+| Mobile Optimization | H | 5hrs| 0 | - |
+| Getting trail address | H | 8hrs| 0 | - |
+| Saving trails to try | H | 8hrs| 0 | - |
+| Total | H | 43hrs| 0 | - |
 
 
 ## Code Snippet
