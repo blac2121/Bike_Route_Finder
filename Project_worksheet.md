@@ -6,7 +6,7 @@ Trailblaze: Find Your Bike Path
 
 ## Project Description
 
-Calling all cyclists—locate NY state bike trails to get outside and blaze those trails and navigate those paths!
+Calling all cyclists—locate NY state bike trails to get outside and blaze those trails and find those paths!
 
 ## API and Data Sample
 
