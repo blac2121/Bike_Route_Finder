@@ -67,10 +67,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API to provide trail directions (bike API does not supply address)
 - Display data with trail description and surface-type
-- Search by surface type
-- Use local storage to save user favorites
+- Search by surface typy
+- Add second API to provide trail address (bike API does not supply address)
+- Use local storage to save paths users want to try
 
 ## Project Schedule
 
@@ -78,14 +78,14 @@ This schedule will be used to keep track of your progress throughout the week an
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-|  Day | Deliverable | Status
+|  Day | Deliverable |High Level | Status
 |---|---| ---|
 |August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|August 17| Project Approval | Incomplete
-|August 18| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|August 19| Initial Clickable Model  | Incomplete
-|August 20| MVP | Incomplete
-|August 21| Presentations | Incomplete
+|Monday, August 17| Project approval, then Header, Search  working in console|Incomplete
+|Tuesday, August 18| Displaying results on page including no results, working on mobile| Incomplete
+|Wednesday, August 19| Adding more parameters to search and results, as will as improved styling | Incomplete
+|Thursday, August 20| styled loading page, get address | Incomplete
+|Friday, August 21| Presentations | Incomplete
 
 ## Priority Matrix
 
@@ -99,9 +99,12 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
+| Adding Search to feed to API | H | 5hrs| 3.5hrs | 3.5hrs |
+| Base HTML: Header, Footer, search section, results section, no results view, landing view | H | 3hrs| 2.5hrs | 2.5hrs |
+| CSS: Header, Footer, search section, results section, no results view, landing view | H | 5hrs| 2.5hrs | 2.5hrs |
+| Mobile Optimization | H | 3hrs| 2.5hrs | 2.5hrs |
 | Total | H | 6hrs| 5hrs | 5hrs |
+
 
 ## Code Snippet
 
