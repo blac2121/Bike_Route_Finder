@@ -2,38 +2,48 @@
 
 ## Project Name
 
-The name of your project.
+Trailblaze: Find Your Bike Path
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Calling all cyclists—locate NY state bike trails to get outside and blaze those trails and navigate those paths!
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+[Bicycle Routes Across New York State](https://dev.socrata.com/foundry/data.ny.gov/7bg2-3faq)
 
 Sample JSON:
 ```json
 {
-    "Search": [
-        {
-            "Title": "Crash",
-            "Year": "2004",
-            "imdbID": "tt0375679",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BOTk1OTA1MjIyNV5BMl5BanBnXkFtZTcwODQxMTkyMQ@@._V1_SX300.jpg"
-        },
-        {
-            "Title": "Crash",
-            "Year": "1996",
-            "imdbID": "tt0115964",
-            "Type": "movie",
-            "Poster": "https://m.media-amazon.com/images/M/MV5BZjlhMDBlNDQtMjZkZi00NzJmLWI4MTgtZDdkMzZmZDcyZGNmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
-        },
-    ],
-    "totalResults": "354",
-    "Response": "True"
-}
+        "trail_name": "Adirondack Trail",
+        "trail_description": "The Adirondack Trail is a NY State Scenic Byway.  Running from the southern to the northern border of the Adirondacks, there are plenty of roadside views through the Adirondack Park.",
+        "trail_length": "188",
+        "biking": "Y",
+        "skiing": "Y",
+        "horseriding": "Y",
+        "skating": "Y",
+        "trail_use": "Biking, Skating, Horse Riding, Skiing",
+        "trail_highway": "Off Road",
+        "paved": "Y",
+        "gravel": "Y",
+        "dirt": "Y",
+        "surface_type": "Paved, Gravel, Dirt"
+    },
+    {
+        "trail_name": "Auburn Line Trail",
+        "trail_description": "The Auburn Line Trail is a 9.1 mile stone dust surface rail-trail which extends from Probst Road to Mertensia Road.",
+        "trail_length": "9.1",
+        "biking": "Y",
+        "skiing": "Y",
+        "horseriding": "Y",
+        "walking": "Y",
+        "trail_use": "Walking, Biking, Horse Riding, Skiing",
+        "trail_highway": "Off Road",
+        "gravel": "Y",
+        "stone_dust": "Y",
+        "dirt": "Y",
+        "surface_type": "Gravel, Stone Dust, Dirt"
+    },
 ```
 
 ## Wireframes
