@@ -78,12 +78,12 @@ Sample JSON:
 
 |  Day |Deliverable| Status
 |---|---| ---|
-|August 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Mon, August 17|Project approval / API: Adding Search to feed to API|Incomplete
-|Tues, August 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
-|Wed, August 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
-|Thurs, August 20|Get address | Incomplete
-|Fri, August 21| Presentations | Incomplete
+|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Mon, Aug 17|Project approval / API: Adding Search to feed to API|Incomplete
+|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
+|Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
+|Thurs, Aug 20|Get address | Incomplete
+|Fri, Aug 21| Presentations | Incomplete
 
 ## Priority Matrix
 
