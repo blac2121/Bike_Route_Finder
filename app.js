@@ -34,7 +34,7 @@ const listRoutes = (routeData) => {
     resultCard.append(routeDistance)
 
     const routeSurface = document.createElement("p")
-    const routeSurfaceName = route.trail_name
+    const routeSurfaceName = route.surface_type
     routeSurface.textContent = `${routeSurfaceName}`
     resultCard.append(routeSurface)
 
