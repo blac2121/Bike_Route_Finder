@@ -95,19 +95,19 @@ Sample JSON:
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Get API to feed to the page | H | 3hrs| 0 | - |
-| Adding filter parameters to API | H | 3hrs| 0 | - |
-| Base HTML: Header, Footer, Filter Section| H | 3hrs| 0 | - |
-| Base HTML: Results section| H | 3hrs| 0 | - |
+| Get API to feed to the page | H | 3hrs| 30mins | 30mins |
+| Adding filter parameters to API | H | 3hrs| 30mins | 30mins |
+| Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
+| Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: No results view| H | 3hrs| 0 | - |
-| CSS: Header, Footer, Filter section| H | 3hrs| 0 | - |
-| CSS: Results section| H | 3hrs| 0 | - |
+| CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
+| CSS: Results section| H | 3hrs| 4hrs | 4hrs |
 | CSS: No Results section| H | 3hrs| 0 | - |
 | Mobile Optimization | H | 3hrs| 0 | - |
-| Finding API to accept a trail name| H | 3hrs| 0 | - |
-| Hooking up address API|H | 3hrs| 0 | - |
-| Filtering with KM or MI| H | 3hrs| 0 | - |
-| Saving trails to try | H | 3hrs| 0 | - |
+| Finding API to accept a trail name| L | 3hrs| 0 | - |
+| Hooking up address API| L | 3hrs| 0 | - |
+| Filtering with KM or MI| L | 3hrs| 0 | - |
+| Saving trails to try | L | 3hrs| 0 | - |
 | Total | H | 39hrs| 0 | - |
 
 
