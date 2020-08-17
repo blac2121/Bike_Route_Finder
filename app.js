@@ -33,14 +33,14 @@ const listRoutes = (routeData) => {
     routeDistance.textContent = `${routeDistanceName}`
     resultCard.append(routeDistance)
 
-    // const routeSurface = document.createElement("p")
-    // const routeSurfaceName = route.trail_name
-    // routeTitle.textContent = `${routeTitleName}`
-    // resultCard.append(routeTitle)
+    const routeSurface = document.createElement("p")
+    const routeSurfaceName = route.trail_name
+    routeSurface.textContent = `${routeSurfaceName}`
+    resultCard.append(routeSurface)
 
-    // const routeDescription = document.createElement("p")
-    // const routeTitleName = route.trail_name
-    // routeTitle.textContent = `${routeTitleName}`
-    // resultCard.append(routeTitle)
+    const routeDescription = document.createElement("p")
+    const routeDescriptionName = route.trail_description
+    routeDescription.textContent = `${routeDescriptionName}`
+    resultCard.append(routeDescription)
   })
 }
