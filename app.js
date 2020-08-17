@@ -72,21 +72,30 @@ const listRoutes = (routeData) => {
   })
 }
 
-const checkDistanceFilter = () => {
-  const distanceValue = document.querySelectorAll(".checkbox")
-  let checkedDistances = "";
-  for (let i = 0; i < distanceValue.length; i++)
-    if (distanceValue[i].checked) {
-      checkedDistances = distanceValue[i].value;
-      console.log(checkedDistances)
-      return checkedDistances;
+const checkSurfaceFilter = () => {
+  const surfaceValue = document.querySelectorAll(".checkbox")
+  let checkedSurfaces = "";
+  for (let i = 0; i < surfaceValue.length; i++)
+    if (surfaceValue[i].checked) {
+      checkedSurfaces = surfaceValue[i].value;
+      console.log(checkedSurfaces)
+      return checkedSurfaces;
   }
 }
+
+const checkDistanceFilter = () => {
+  const distanceValue = document.querySelector(".distance").value;
+  console.log(distanceValue)
+  return distanceValue;
+}
+
+checkDistanceFilter();
 
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
   const distance = checkDistanceFilter();
+  // const surfaceType = checkSurfaceFilter();
   fetchRoutes(distance)
 })
 
