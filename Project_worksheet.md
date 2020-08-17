@@ -95,13 +95,20 @@ Sample JSON:
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Search to feed to API | H | 6hrs| 0 | - |
-| Base HTML: Header, Footer, search section, results section, no results view| H | 8hrs| 0 | - |
-| CSS: Header, Footer, search section, results section, no results view| H | 8hrs| 0 | - |
-| Mobile Optimization | H | 5hrs| 0 | - |
-| Getting trail address | H | 8hrs| 0 | - |
-| Picking KM or MI / Get Address / Saving trails to try | H | 8hrs| 0 | - |
-| Total | H | 43hrs| 0 | - |
+| Get API to feed to the page | H | 3hrs| 0 | - |
+| Adding filter parameters to API | H | 3hrs| 0 | - |
+| Base HTML: Header, Footer, Filter Section| H | 3hrs| 0 | - |
+| Base HTML: Results section| H | 3hrs| 0 | - |
+| Base HTML: No results view| H | 3hrs| 0 | - |
+| CSS: Header, Footer, Filter section| H | 3hrs| 0 | - |
+| CSS: Results section| H | 3hrs| 0 | - |
+| CSS: No Results section| H | 3hrs| 0 | - |
+| Mobile Optimization | H | 3hrs| 0 | - |
+| Finding API to accept a trail name H | 3hrs| 0 | - |
+| Hooking up address API|H | 3hrs| 0 | - |
+| Filtering with KM or MI| H | 3hrs| 0 | - |
+| Saving trails to try | H | 3hrs| 0 | - |
+| Total | H | 39hrs| 0 | - |
 
 
 ## Code Snippet
