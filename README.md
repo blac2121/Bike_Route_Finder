@@ -96,7 +96,7 @@ Sample JSON:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Get API to feed to the page | H | 3hrs| 30mins | 30mins |
-| Adding filter parameters to API | H | 3hrs| 30mins | 30mins |
+| Adding filter parameters to API | H | 3hrs| 0 | - |
 | Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: No results view| H | 3hrs| 0 | - |
