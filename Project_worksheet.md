@@ -104,7 +104,7 @@ Sample JSON:
 | CSS: Results section| H | 3hrs| 0 | - |
 | CSS: No Results section| H | 3hrs| 0 | - |
 | Mobile Optimization | H | 3hrs| 0 | - |
-| Finding API to accept a trail name H | 3hrs| 0 | - |
+| Finding API to accept a trail name| H | 3hrs| 0 | - |
 | Hooking up address API|H | 3hrs| 0 | - |
 | Filtering with KM or MI| H | 3hrs| 0 | - |
 | Saving trails to try | H | 3hrs| 0 | - |
