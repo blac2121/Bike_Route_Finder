@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <h2>Locate New York State bike routes to blaze trails</h2> -->
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+  <script defer src="./app.js"></script>
+  <title>Trailblaze: Route Planner</title>
+</head>
+<body>
+  <header class="header-container">
+    <div class="title-container">
+      <h1 class="title">Trailblaze: Discover your Next Bike Route</h1>
+    </div>
+    <div class="banner-container">
+    </div>
+  </header>
+  <div class="aside-main-container">
+    <aside class="filter-container">
+
+      <div class="filter-heading">
+        <h3>Filter</h3>
+        <hr class="solid">
+      </div>
+
+      <div class="filter-distance-header">
+        <h4 class="distance-title">Distance</h4>
+      </div>
+      <div class="distance-container">
+        <input type="checkbox" id="any-distance" class="checkbox" value="all-distances" checked>
+        <label class="check-container" for="any-distance">Any</label><br> 
+
+        <input type="checkbox" id="10miles" class="checkbox" value="10">
+        <label for="10miles">10 Miles</label><br>
+
+        <input type="checkbox" id="25miles" class="checkbox" value="20">
+        <label for="20miles">20 Miles</label><br>
+
+        <input type="checkbox" id="50miles" class="checkbox" value="50">
+        <label for="50miles">50 Miles</label><br>
+
+        <input type="checkbox" id="100miles" class="checkbox" value="100">
+        <label for="100miles">100 Miles</label>
+      </div>
+      <div class="filter-surface-header">
+        <h4 class="surface-title">Surface</h4>
+      </div>
+      <div class="surface-container">
+        <input type="checkbox" id="any-surface" class="checkbox" value="any-surface" checked>
+        <label for="any-surface">Any</label><br>
+
+        <input type="checkbox" id="pavement" class="checkbox" value="pavement">
+        <label for="pavement">Pavement</label><br>
+
+        <input type="checkbox" id="dirt" class="checkbox" value="dirt">
+        <label for="dirt">Dirt</label><br>
+
+        <input type="checkbox" id="gravel" class="checkbox" value="gravel">
+        <label for="gravel">Gravel</label><br>
+
+        <input type="checkbox" id="stone-dust" class="checkbox" value="stone-dust">
+        <label for="stone-dust">Stone Dust</label><br>
+
+        <input type="checkbox" id="boardwalk" class="checkbox" value="boardwalk">
+        <label for="boardwalk">Boardwalk</label>
+      </div>
+      <div class="units-container">
+        <h3>Units</h3>
+      </div>
+      <div class="units-radio">
+        <input type="radio" id="miles" class="miles radio" value="miles" checked>
+        <label for="miles">Miles</label><br>
+        <input type="radio" id="kilos" class="kilos radio" value="kilos">
+        <label for="kilos">Kilometers</label>
+      </div>
+      <div class="search-button-container">
+        <button class="search-button" type="submit">Filter</button>
+        <button class="clear-button" type="submit">Clear</button>
+      </div>
+
+    </aside>
+    <main class="results-container">
+      <div class="results-header">
+        <h3>Results</h3>
+      </div>
+      <div class="results-section">
+        <div class="result-cards1">
+          <div class="row1">
+            <div><p class="heading">Greater Binghamton Greenway - S. Washington Street to Binghamton University</p></div>
+            <div><p class="result-distance">100 miles</p></div>
+          </div>  
+          <div class="row2">
+            <div><p class="surface-description">Surface: paved</p></div>
+          </div>
+          <div class="row3">
+            <div><p class="description content">The Auburn Line Trail is a 9.1 mile stone dust surface rail-trail which extends from Probst Road to d to Mertensia Road. And then down the street some more. </p></div>
+          </div>
+        </div>
+        <div class="result-cards2">
+          <div class="row1">
+            <div><p class="heading">Greater Binghamton Greenway - S. Washington Street to Binghamton University</p></div>
+            <div><p class="result-distance">100 miles</p></div>
+          </div>  
+          <div class="row2">
+            <div><p class="surface-description">Surface: paved</p></div>
+          </div>
+          <div class="row3">
+            <div><p class="description content">The Auburn Line Trail is a 9.1 mile stone dust surface rail-trail which extends from Probst Road to Mertensia Road.</p></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <span>Cover Photo by <a href="https://unsplash.com/@tiffanylnutt?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tiffany Nutt</a> on <a href="https://unsplash.com/s/photos/bike?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+  </footer>
+</body>
+  
+</html> 
