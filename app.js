@@ -1,15 +1,11 @@
-const url = ("https://data.ny.gov/resource/7bg2-3faq.json");
-// https://data.ny.gov/resource/7bg2-3faq.json?trail_length=188// 
-// https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length%3E100 //
-// https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length>100
-// `https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`
+const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json");
 
 
-const fetchRoutes = async (distance) => {
+// LANDING PAGE
+const fetchRoutes = async (url) => {
   try {
-    let response = await axios.get(`https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`)
-    const routeData = response.data
-    console.log(routeData)
+    let response = await axios.get(url)
+    let routeData = response.data
       
     listRoutes(routeData);
 
@@ -17,6 +13,8 @@ const fetchRoutes = async (distance) => {
     console.log(`Error: ${error}`)
   }
 }
+
+fetchRoutes(allResults);
 
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
@@ -72,6 +70,30 @@ const listRoutes = (routeData) => {
   })
 }
 
+// FILTER
+
+// Distance Filter
+const checkDistanceFilter = () => {
+  const distanceValue = document.querySelector(".distance").value;
+  console.log(distanceValue);
+  return distanceValue;
+}
+
+const filterButton = document.querySelector(".filter-button")
+filterButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  let distance = checkDistanceFilter();
+    if (distance === "all-distances") {
+      let url = allResults;
+      fetchRoutes(url)
+    } else {
+      let url = (`https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`)
+      fetchRoutes(url)
+    }
+})
+
+// Surface Filter
+
 const checkSurfaceFilter = () => {
   const surfaceValue = document.querySelectorAll(".checkbox")
   let checkedSurfaces = "";
@@ -82,22 +104,6 @@ const checkSurfaceFilter = () => {
       return checkedSurfaces;
   }
 }
-
-const checkDistanceFilter = () => {
-  const distanceValue = document.querySelector(".distance").value;
-  console.log(distanceValue)
-  return distanceValue;
-}
-
-checkDistanceFilter();
-
-const filterButton = document.querySelector(".filter-button")
-filterButton.addEventListener("click", (e) => {
-  e.preventDefault()
-  const distance = checkDistanceFilter();
-  // const surfaceType = checkSurfaceFilter();
-  fetchRoutes(distance)
-})
 
 
 // const removeResults = () => {
