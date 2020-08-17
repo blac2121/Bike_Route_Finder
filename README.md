@@ -80,9 +80,9 @@ Sample JSON:
 
 |  Day |Deliverable| Status
 |---|---| ---|
-|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Mon, Aug 17|Project approval / API: Adding filter to feed to API|Incomplete
-|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view| Incomplete
+|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
+|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view| Mostly Complete
 |Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view | Incomplete
 |Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
 |Fri, Aug 21| Presentations | Incomplete
@@ -96,7 +96,7 @@ Sample JSON:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Get API to feed to the page | H | 3hrs| 30mins | 30mins |
-| Adding filter parameters to API | H | 3hrs| 0 | - |
+| Adding filter parameters to API | H | 3hrs| 5hrs | 5hrs |
 | Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: No results view| H | 3hrs| 0 | - |
