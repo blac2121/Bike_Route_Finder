@@ -85,10 +85,10 @@ filterButton.addEventListener("click", (e) => {
   let distance = checkDistanceFilter();
     if (distance === "all-distances") {
       let url = allResults;
-      fetchRoutes(url)
+      fetchRoutes(url);
     } else {
       let url = (`https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`)
-      fetchRoutes(url)
+      fetchRoutes(url);
     }
 })
 
@@ -105,12 +105,11 @@ const checkSurfaceFilter = () => {
   }
 }
 
-
-// const removeResults = () => {
-//   const oldSearch = document.querySelector(".movie-tile")
-//   while (oldSearch.lastChild) {
-//     oldSearch.removeChild(oldSearch.lastChild)
-//   }
-// } 
+const removeResults = () => {
+  const results = document.querySelector(".result-card")
+  while (results.lastChild) {
+    results.removeChild(results.lastChild)
+  }
+} 
 
 
