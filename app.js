@@ -1,9 +1,13 @@
 const url = ("https://data.ny.gov/resource/7bg2-3faq.json");
 // https://data.ny.gov/resource/7bg2-3faq.json?trail_length=188// 
+// https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length%3E100 //
+// https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length>100
+// `https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`
 
-const fetchRoutes = async (routes) => {
+
+const fetchRoutes = async (distance) => {
   try {
-    let response = await axios.get(url)
+    let response = await axios.get(`https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`)
     const routeData = response.data
     console.log(routeData)
       
@@ -13,8 +17,6 @@ const fetchRoutes = async (routes) => {
     console.log(`Error: ${error}`)
   }
 }
-
-fetchRoutes();
 
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
@@ -69,3 +71,31 @@ const listRoutes = (routeData) => {
     resultCardRow3.append(routeDescription)
   })
 }
+
+const checkDistanceFilter = () => {
+  const distanceValue = document.querySelectorAll(".checkbox")
+  let checkedDistances = "";
+  for (let i = 0; i < distanceValue.length; i++)
+    if (distanceValue[i].checked) {
+      checkedDistances = distanceValue[i].value;
+      console.log(checkedDistances)
+      return checkedDistances;
+  }
+}
+
+const filterButton = document.querySelector(".filter-button")
+filterButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  const distance = checkDistanceFilter();
+  fetchRoutes(distance)
+})
+
+
+// const removeResults = () => {
+//   const oldSearch = document.querySelector(".movie-tile")
+//   while (oldSearch.lastChild) {
+//     oldSearch.removeChild(oldSearch.lastChild)
+//   }
+// } 
+
+

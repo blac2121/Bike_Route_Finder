@@ -62,7 +62,7 @@ h3 {
   height: 20px;
 }
 
-.search-button,
+.filter-button,
 .clear-button {
   width: 100%;
   margin: 30px 0 10px 0;
@@ -73,13 +73,13 @@ h3 {
   cursor: pointer;
 }
 
-.search-button {
+.filter-button {
   background-color: #F79208;
   color: white;
   border: 1px solid #FD9302;
 }
 
-.search-button:hover {
+.filter-button:hover {
   background-color: #FBB130;
   
 }
