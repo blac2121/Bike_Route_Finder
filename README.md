@@ -100,6 +100,7 @@ Sample JSON:
 | Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: No results view| H | 3hrs| 0 | - |
+| Base HTML: Remove old results| H | 3hrs| 1hr | - |
 | CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
 | CSS: Results section| H | 3hrs| 4hrs | 4hrs |
 | CSS: No Results section| H | 3hrs| 0 | - |
@@ -108,7 +109,7 @@ Sample JSON:
 | Hooking up address API| L | 3hrs| 0 | - |
 | Filtering with KM or MI| L | 3hrs| 0 | - |
 | Saving trails to try | L | 3hrs| 0 | - |
-| Total | H | 39hrs| 0 | - |
+| Total | H | 42hrs| 0 | - |
 
 
 ## Code Snippet
