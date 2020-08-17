@@ -57,7 +57,6 @@ const listRoutes = (routeData) => {
     routeSurface.textContent = `${routeSurfaceName}`
     resultCardRow2.append(routeSurface)
 
-
     const resultCardRow3 = document.createElement("div")
     resultCardRow3.classList.add("result-row3")
     resultCard.append(resultCardRow3)
