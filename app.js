@@ -27,5 +27,20 @@ const listRoutes = (routeData) => {
     const routeTitleName = route.trail_name
     routeTitle.textContent = `${routeTitleName}`
     resultCard.append(routeTitle)
+
+    const routeDistance = document.createElement("p")
+    const routeDistanceName = route.trail_length
+    routeDistance.textContent = `${routeDistanceName}`
+    resultCard.append(routeDistance)
+
+    // const routeSurface = document.createElement("p")
+    // const routeSurfaceName = route.trail_name
+    // routeTitle.textContent = `${routeTitleName}`
+    // resultCard.append(routeTitle)
+
+    // const routeDescription = document.createElement("p")
+    // const routeTitleName = route.trail_name
+    // routeTitle.textContent = `${routeTitleName}`
+    // resultCard.append(routeTitle)
   })
 }
