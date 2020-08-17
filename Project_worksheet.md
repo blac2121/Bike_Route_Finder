@@ -89,7 +89,7 @@ Sample JSON:
 
 ## Priority Matrix
 
-[Project Matrix](https://res.cloudinary.com/dgy8sdrsq/image/upload/v1597516249/Trailblazer%20-%20Project%20Matrix.png)
+[Project Matrix](https://res.cloudinary.com/dgy8sdrsq/image/upload/v1597668585/LaCasse%20-%20BikeTrailFinder%20Project%20Matrix.png)
 
 ## Timeframes
 
