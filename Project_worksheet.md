@@ -76,7 +76,7 @@ Sample JSON:
 - High risk: Use local storage to save paths users want to try
 - High risk: Add second API to provide trail address (bike API does not supply address or location so this might be impossible)
 
-## Project Schedule
+## Goals: Project Schedule
 
 |  Day |Deliverable| Status
 |---|---| ---|
