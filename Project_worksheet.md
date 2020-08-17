@@ -2,11 +2,11 @@
 
 ## Project Name
 
-Trailblaze: Discover Bike Paths
+Trailblaze: Discover your Next Bike Route
 
 ## Project Description
 
-Calling all cyclists — discover New York state bike routes to blaze those trails!
+Calling all cyclists — Locate New York State bike routes to blaze trails!
 
 ## API and Data Sample
 
@@ -60,29 +60,30 @@ Sample JSON:
 
 #### MVP 
 
-- Identify API and problems to solve 
-- Set up API and get data rending in the console  
-- Set up the following states: landing page, search result state, no results
+- Identify API 
+- Set up API and render data on the page  
+- Set up filter to filter trail length
+- Set up the following states: filter removes old data set and updates with new set, no results
 - Display data with trail name and length 
-- Search by trail length
 - Mobile compatibility
 
 #### PostMVP  
 
 - Display data with trail description and surface-type
-- Search by surface typy
-- High time risk: Allowing user to choose between MI and KMs
-- High time risk: Add second API to provide trail address (bike API does not supply address)
-- High time risk: Use local storage to save paths users want to try
+- Set up filter to filter surface typy
+- Allow user to choose between MI and KMs (currently is in MI)
+- Display a set amount of description characters and impement a "read more" concept
+- High risk: Use local storage to save paths users want to try
+- High risk: Add second API to provide trail address (bike API does not supply address or location so this might be impossible)
 
 ## Project Schedule
 
 |  Day |Deliverable| Status
 |---|---| ---|
 |Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Mon, Aug 17|Project approval / API: Adding Search to feed to API|Incomplete
-|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view, landing view| Incomplete
-|Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view, landing view  | Incomplete
+|Mon, Aug 17|Project approval / API: Adding filter to feed to API|Incomplete
+|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view| Incomplete
+|Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view | Incomplete
 |Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
 |Fri, Aug 21| Presentations | Incomplete
 
@@ -95,8 +96,8 @@ Sample JSON:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Search to feed to API | H | 6hrs| 0 | - |
-| Base HTML: Header, Footer, search section, results section, no results view, landing view | H | 8hrs| 0 | - |
-| CSS: Header, Footer, search section, results section, no results view, landing view | H | 8hrs| 0 | - |
+| Base HTML: Header, Footer, search section, results section, no results view| H | 8hrs| 0 | - |
+| CSS: Header, Footer, search section, results section, no results view| H | 8hrs| 0 | - |
 | Mobile Optimization | H | 5hrs| 0 | - |
 | Getting trail address | H | 8hrs| 0 | - |
 | Picking KM or MI / Get Address / Saving trails to try | H | 8hrs| 0 | - |
