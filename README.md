@@ -100,7 +100,7 @@ Sample JSON:
 | Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: No results view| H | 3hrs| 0 | - |
-| Base HTML: Remove old results| H | 3hrs| 1hr | - |
+| Base HTML: Remove old results| H | 3hrs| 2hrs | 2hrs |
 | CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
 | CSS: Results section| H | 3hrs| 4hrs | 4hrs |
 | CSS: No Results section| H | 3hrs| 0 | - |
