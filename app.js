@@ -1,5 +1,8 @@
 const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4");
 const lengthDomain = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$where=trail_length`)
+const surfaceDomain = (`https://data.ny.gov/resource/7bg2-3faq.json?$where=`)
+// const surfaceDomainMultiples = (`https://data.ny.gov/resource/7bg2-3faq.json?$where=paved = 'Y'OR gravel= 'Y'`)
+// 
 
 // LANDING PAGE
 const fetchRoutes = async (url) => {
@@ -81,7 +84,7 @@ const checkDistanceFilter = () => {
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
-  // removeResults();
+  removeResults();
   // let distance = checkDistanceFilter();
   //   if (distance === "all-distances") {
   //       let url = allResults;
@@ -101,8 +104,13 @@ filterButton.addEventListener("click", (e) => {
   //   } else {
   //       let url = (`${lengthDomain}>${distance}`)
   //       fetchRoutes(url);
-  //   }
-  console.log(checkSurfaceFilter());
+  //   }  
+  let surface = checkSurfaceFilter(); {
+    if (surface = "pavement") {
+      let url = (`${surfaceDomain}paved='Y'`)
+      fetchRoutes(url);
+    }
+  }
 })
 
 // Surface Filter
