@@ -83,7 +83,7 @@ Sample JSON:
 |Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
 |Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
-|Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / no results view | Partial
+|Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / no results view | Everything but no results view
 |Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
 |Fri, Aug 21| Presentations | Incomplete
 
@@ -103,7 +103,7 @@ Sample JSON:
 | CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
 | CSS: Results section| H | 3hrs| 4hrs | 4hrs |
 | Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
-| Adding Surface Type in filter, and filter by| M | 5hrs| 0 | - |
+| Adding Surface Type in filter, and filter by| M | 5hrs| 8hrs | 8hrs |
 | Adding Surface Type to results| M | 5hrs| 0 | - |
 | No results view: HTML and CSS| H | 5hrs| 0 | - |
 | Finding API to accept a trail name| L | 3hrs| 0 | - |
