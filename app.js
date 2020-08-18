@@ -71,7 +71,7 @@ const listRoutes = (routeData) => {
 }
 
 const checkDistanceFilter = () => {
-  const distanceValue = document.querySelector(".distance").value;
+  const distanceValue = document.querySelector(".distance-selector").value;
   if (distanceValue === "all-distances") {
     return "all-distances";
   } else if (distanceValue === "11") {

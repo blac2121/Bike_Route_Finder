@@ -31,15 +31,35 @@ h1 {
 .aside-main-container {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .filter-container {
-  width: 15%;
+  width: 20%;
   background-color: #F1F0F0;
   margin: 30px;
   padding: 10px;
   border-radius: 2px;
   box-shadow: 1px 3px 5px 1px #F79208;
+}
+
+.distance-selector {
+  width: 100%;
+  font-size: 14px; 
+  padding: 10px 5px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #F7F7F6;
+  color: gray;
+  border: 1px solid #e0e0e0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.distance-title,
+.surface-title, 
+.units-title {
+  margin-bottom: 5px;
 }
 
 hr {
@@ -52,8 +72,8 @@ h3 {
 
 .checkbox {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 200px;
+  height: 200px;
 }
 
 .radio {
@@ -103,7 +123,7 @@ h3 {
 }
 
 .results-container {
-  width: 85%;
+  width: 80%;
   margin: 50px;
   padding: 10px;
   border-radius: 2px;
