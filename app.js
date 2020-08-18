@@ -82,6 +82,7 @@ const checkDistanceFilter = () => {
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
+  removeResults();
   let distance = checkDistanceFilter();
     if (distance === "all-distances") {
       let url = allResults;
@@ -106,7 +107,7 @@ const checkSurfaceFilter = () => {
 }
 
 const removeResults = () => {
-  const results = document.querySelector(".result-card")
+  const results = document.querySelector(".results-section")
   while (results.lastChild) {
     results.removeChild(results.lastChild)
   }
