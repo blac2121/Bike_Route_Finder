@@ -80,10 +80,10 @@ Sample JSON:
 
 |  Day |Deliverable| Status
 |---|---| ---|
-|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Mon, Aug 17|Project approval / API: Adding filter to feed to API|Incomplete
-|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view| Incomplete
-|Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view | Incomplete
+|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
+|Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
+|Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / no results view | Partial
 |Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
 |Fri, Aug 21| Presentations | Incomplete
 
@@ -95,20 +95,22 @@ Sample JSON:
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Get API to feed to the page | H | 3hrs| 0 | - |
-| Adding filter parameters to API | H | 3hrs| 0 | - |
-| Base HTML: Header, Footer, Filter Section| H | 3hrs| 0 | - |
-| Base HTML: Results section| H | 3hrs| 0 | - |
-| Base HTML: No results view| H | 3hrs| 0 | - |
-| CSS: Header, Footer, Filter section| H | 3hrs| 0 | - |
-| CSS: Results section| H | 3hrs| 0 | - |
-| CSS: No Results section| H | 3hrs| 0 | - |
-| Mobile Optimization | H | 3hrs| 0 | - |
-| Finding API to accept a trail name| H | 3hrs| 0 | - |
-| Hooking up address API|H | 3hrs| 0 | - |
-| Filtering with KM or MI| H | 3hrs| 0 | - |
-| Saving trails to try | H | 3hrs| 0 | - |
-| Total | H | 39hrs| 0 | - |
+| Get API to feed to the page | H | 3hrs| 30mins | 30mins |
+| Adding filter parameters to API | H | 3hrs| 5hrs | 5hrs |
+| Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
+| Base HTML: Results section| H | 3hrs| 30mins | 30mins |
+| Base HTML: Remove old results| H | 3hrs| 2hrs | 2hrs |
+| CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
+| CSS: Results section| H | 3hrs| 4hrs | 4hrs |
+| Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
+| Adding Surface Type in filter, and filter by| M | 5hrs| 0 | - |
+| Adding Surface Type to results| M | 5hrs| 0 | - |
+| No results view: HTML and CSS| H | 5hrs| 0 | - |
+| Finding API to accept a trail name| L | 3hrs| 0 | - |
+| Hooking up address API| L | 3hrs| 0 | - |
+| Filtering with KM or MI| L | 3hrs| 0 | - |
+| Saving trails to try | L | 3hrs| 0 | - |
+| Total | H | 42hrs| 0 | - |
 
 
 ## Code Snippet
