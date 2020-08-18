@@ -73,7 +73,7 @@ const listRoutes = (routeData) => {
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance").value;
   if (distanceValue === "all-distances") {
-    return allResults;
+    return "all-distances";
   } else if (distanceValue === "11") {
     return (`${lengthURL}<${distanceValue}`)
   } else if (distanceValue === "10to26") {
@@ -87,6 +87,26 @@ const checkDistanceFilter = () => {
   }  
 }
 
+// const checkSurfaceFilter = () => {
+//   const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
+//   let checkedSurfaces = [];
+//   for (let i = 0; i < surfaceValue.length; i++) {
+//     checkedSurfaces.push(surfaceValue[i].value + " = 'Y'");
+//     console.log(checkedSurfaces)
+//   }
+//   if (checkedSurfaces.length === 1) {
+//     console.log(checkedSurfaces.toString())
+//     return checkedSurfaces.toString()
+//   } else if (checkedSurfaces.length > 1) {
+//     for (let i = 0; i < checkedSurfaces.length; i++) {
+//       let checkedSurfaceString = checkedSurfaces.join(" OR ")
+//       let surfacePara = ("(" + checkedSurfaceString + ")")
+//       console.log(surfacePara);
+//       return surfacePara;
+//     }
+//   } 
+// }
+
 const checkSurfaceFilter = () => {
   const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
   let checkedSurfaces = [];
@@ -99,14 +119,14 @@ const checkSurfaceFilter = () => {
     return checkedSurfaces.toString()
   } else if (checkedSurfaces.length > 1) {
     for (let i = 0; i < checkedSurfaces.length; i++) {
-      // console.log(checkedSurfaces.join(" OR "))
-      // return checkedSurfaces.join(" OR ")
       let checkedSurfaceString = checkedSurfaces.join(" OR ")
       let surfacePara = ("(" + checkedSurfaceString + ")")
       console.log(surfacePara);
       return surfacePara;
     }
-  } 
+  } else {
+    return "all-surfaces"
+  }
 }
 
 const removeResults = () => {
@@ -122,12 +142,57 @@ filterButton.addEventListener("click", (e) => {
 
   removeResults();
 
-  let distanceURL = checkDistanceFilter();  
-  let surfaceURL = checkSurfaceFilter();
-  let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`)
-  fetchRoutes(url);
+  const distanceURL = checkDistanceFilter();  
+  const surfaceURL = checkSurfaceFilter();
 
+  // if (distanceURL === "all-distances") { // If distance is all and surface has value 
+  //   let url = (`${resultsURL}${surfaceURL}`)
+  //   fetchRoutes(url);
+  // } else if (surfaceURL === "all-surfaces") { // If surface is all and distance has value 
+  //   let url = (`${resultsURL}${distanceURL}`)
+  //   fetchRoutes(url);
+  // } else {
+  //   let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`)
+  //   fetchRoutes(url);
+  // }
+
+  if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+    let url = (`${resultsURL}${surfaceURL}`)
+    fetchRoutes(url);
+  } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+    let url = allResults;
+    fetchRoutes(url);
+  } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+    let url = (`${resultsURL}${distanceURL}`)
+    fetchRoutes(url);
+  } else {
+    let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+    fetchRoutes(url);
+  }
 })
 
-// Working:https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length%3E100%20AND%20(gravel%20=%20%27Y%27%20OR%20paved%20=%20%27Y%27)
-// Broken: https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length%3E100%20AND%20%27(%27paved%20=%20%27Y%27%20OR%20gravel%20=%20%27Y%27%27)%27 
+// Working Code
+
+// const filterButton = document.querySelector(".filter-button")
+// filterButton.addEventListener("click", (e) => {
+//   e.preventDefault()
+
+//   removeResults();
+
+//   const distanceURL = checkDistanceFilter();  
+//   const surfaceURL = checkSurfaceFilter();
+
+//   if (distanceURL === "all-distances") { // If distance is all and surface has value 
+//     let url = (`${resultsURL}${surfaceURL}`)
+//     fetchRoutes(url);
+//   } else if (surfaceURL === "all-surfaces") { // If surface is all and surface has value 
+//     let url = (`${resultsURL}${distanceURL}`)
+//     fetchRoutes(url);
+//   } else if (distanceURL === "all-distances" || surfaceURL === "all-surfaces") {
+//     let url = allResults
+//     fetchRoutes(url);
+//   } else {
+//     let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`)
+//     fetchRoutes(url);
+//   }
+// })
