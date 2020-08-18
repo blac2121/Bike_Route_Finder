@@ -30,35 +30,29 @@
       <div class="distance-container">
         <select class="distance">
           <option value="all-distances">All Distances</option>
-          <option value="11">Fewer than 10 Miles</option>
-          <option value="26">Fewer than 25 Miles</option>
-          <option value="51">Fewer than 50 Miles</option>
-          <option value="76">Fewer than 75 Miles</option>
-          <option value="101">Fewer than 100 Miles</option>
-          <option value="201">Fewer than 200 Miles</option>
+          <option value="11">Less than 10 Miles</option>
+          <option value="10to26">10-25 Miles</option>
+          <option value="25to51">25-50 Miles</option>
+          <option value="50to101">50-100 Miles</option>
+          <option value="100">Greater than 100 Miles</option>
         </select>
       </div>
       <div class="filter-surface-header">
         <h4 class="surface-title">Surface</h4>
       </div>
       <div class="surface-container">
-        <form>
-          <input type="checkbox" id="any-surface" class="checkbox" value="any-surface" checked>
+        <form class="checkboxes">
+          <input type="checkbox" class="surface-checkbox" value="any-surface">
           <label for="any-surface">Any</label><br>
-
-          <input type="checkbox" id="pavement" class="checkbox" value="pavement">
+          <input type="checkbox"  class="surface-checkbox" id="pavement" value="pavement">
           <label for="pavement">Pavement</label><br>
-
-          <input type="checkbox" id="dirt" class="checkbox" value="dirt">
+          <input type="checkbox" class="surface-checkbox" id="dirt" value="dirt">
           <label for="dirt">Dirt</label><br>
-
-          <input type="checkbox" id="gravel" class="checkbox" value="gravel">
+          <input type="checkbox" class="surface-checkbox" value="gravel">
           <label for="gravel">Gravel</label><br>
-
-          <input type="checkbox" id="stone-dust" class="checkbox" value="stone-dust">
+          <input type="checkbox" class="surface-checkbox" value="stone-dust">
           <label for="stone-dust">Stone Dust</label><br>
-
-          <input type="checkbox" id="boardwalk" class="checkbox" value="boardwalk">
+          <input type="checkbox" class="surface-checkbox" value="boardwalk">
           <label for="boardwalk">Boardwalk</label>
         </form>
       </div>

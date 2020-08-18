@@ -1,5 +1,5 @@
-const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json");
-
+const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4");
+const lengthDomain = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$where=trail_length`)
 
 // LANDING PAGE
 const fetchRoutes = async (url) => {
@@ -14,7 +14,7 @@ const fetchRoutes = async (url) => {
   }
 }
 
-fetchRoutes(allResults);
+// fetchRoutes(allResults);
 
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
@@ -75,35 +75,45 @@ const listRoutes = (routeData) => {
 // Distance Filter
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance").value;
-  console.log(distanceValue);
   return distanceValue;
 }
 
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
-  removeResults();
-  let distance = checkDistanceFilter();
-    if (distance === "all-distances") {
-      let url = allResults;
-      fetchRoutes(url);
-    } else {
-      let url = (`https://data.ny.gov/resource/7bg2-3faq.json?$where=trail_length<${distance}`)
-      fetchRoutes(url);
-    }
+  // removeResults();
+  // let distance = checkDistanceFilter();
+  //   if (distance === "all-distances") {
+  //       let url = allResults;
+  //       fetchRoutes(url);
+  //   } else if (distance === "11") {
+  //       let url = (`${lengthDomain}<${distance}`)
+  //       fetchRoutes(url);  
+  //   } else if (distance === "10to26") {
+  //       let url = (`${lengthDomain} between '10' and '25'`)
+  //       fetchRoutes(url);
+  //   } else if (distance === "25to51") {
+  //       let url = (`${lengthDomain} between '25' and '51'`)
+  //       fetchRoutes(url);
+  //   } else if (distance === "50to101") {
+  //       let url = (`${lengthDomain} between '50' and '101'`)
+  //       fetchRoutes(url);
+  //   } else {
+  //       let url = (`${lengthDomain}>${distance}`)
+  //       fetchRoutes(url);
+  //   }
+  console.log(checkSurfaceFilter());
 })
 
 // Surface Filter
 
 const checkSurfaceFilter = () => {
-  const surfaceValue = document.querySelectorAll(".checkbox")
-  let checkedSurfaces = "";
-  for (let i = 0; i < surfaceValue.length; i++)
-    if (surfaceValue[i].checked) {
-      checkedSurfaces = surfaceValue[i].value;
-      console.log(checkedSurfaces)
-      return checkedSurfaces;
+  const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
+  let checkedSurfaces = [];
+  for (let i = 0; i < surfaceValue.length; i++) {
+    checkedSurfaces.push(surfaceValue[i].value);
   }
+  return checkedSurfaces;
 }
 
 const removeResults = () => {
