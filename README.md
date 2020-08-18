@@ -99,12 +99,13 @@ Sample JSON:
 | Adding filter parameters to API | H | 3hrs| 5hrs | 5hrs |
 | Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
-| Base HTML: No results view| H | 3hrs| 0 | - |
 | Base HTML: Remove old results| H | 3hrs| 2hrs | 2hrs |
 | CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
 | CSS: Results section| H | 3hrs| 4hrs | 4hrs |
-| CSS: No Results section| H | 3hrs| 0 | - |
-| Mobile Optimization | H | 3hrs| 0 | - |
+| Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
+| Adding Surface Type in filter, and filter by| M | 5hrs| 0 | - |
+| Adding Surface Type to results| M | 5hrs| 0 | - |
+| No results view: HTML and CSS| H | 5hrs| 0 | - |
 | Finding API to accept a trail name| L | 3hrs| 0 | - |
 | Hooking up address API| L | 3hrs| 0 | - |
 | Filtering with KM or MI| L | 3hrs| 0 | - |
