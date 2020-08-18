@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="./app.js"></script>
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
   <!-- <h2>Check out New York State bike routes to blaze trails</h2> -->
@@ -28,13 +30,12 @@
       <div class="distance-container">
         <select class="distance">
           <option value="all-distances">All Distances</option>
-          <option value="11">10 Miles</option>
-          <option value="26">25 Miles</option>
-          <option value="51">50 Miles</option>
-          <option value="76">75 Miles</option>
-          <option value="101">100 Miles</option>
-          <option value="201">200 Miles</option>
-          <!-- over 100 miles -->
+          <option value="11">Fewer than 10 Miles</option>
+          <option value="26">Fewer than 25 Miles</option>
+          <option value="51">Fewer than 50 Miles</option>
+          <option value="76">Fewer than 75 Miles</option>
+          <option value="101">Fewer than 100 Miles</option>
+          <option value="201">Fewer than 200 Miles</option>
         </select>
       </div>
       <div class="filter-surface-header">

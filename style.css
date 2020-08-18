@@ -177,3 +177,33 @@ footer {
   width: 100%;
   text-align: center;
 } 
+
+@media (max-width: 480px) {
+  .aside-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-container {
+    background: none;
+    height: 35px;
+  }
+
+  .filter-container {
+    width: 75%;
+    align-items: center;
+  }
+
+  .result-row1 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 50px;
+  }
+
+  .result-row1-distance {
+    align-items: center;
+  }
+  
+}
