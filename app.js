@@ -2,13 +2,31 @@ const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJK
 const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
 const lengthURL = (`trail_length`)
 
+const noResultsPage = () => {
+  const routeSection = document.querySelector(".results-section")
+
+  const noResults = document.createElement("div")
+  noResults.classList.add("no-results")
+  routeSection.append(noResults) 
+
+  const noResultsTitle = document.createElement("p")
+  noResultsTitle.textContent = "Looks like you're blazing your own trail! Please update your search and try again."
+  noResultsTitle.classList.add("no-result-text")
+  noResults.append(noResultsTitle)
+}
+
+
 const fetchRoutes = async (url) => {
   try {
-    let response = await axios.get(url)
-    let routeData = response.data
-      
-    listRoutes(routeData);
+    const response = await axios.get(url)
+    const routeData = response.data
 
+    if (routeData > 0) {
+      listRoutes(routeData);
+    } else {
+      noResultsPage();
+    }
+    
   } catch (error) {
     console.log(`Error: ${error}`)
   }
@@ -141,13 +159,7 @@ filterButton.addEventListener("click", (e) => {
 })
 
 const clearButton = document.querySelector(".clear-button")
-
 clearButton.addEventListener("click", () => {
   removeResults();
   fetchRoutes(allResults);
 })
-// const clearFilter = () => {
-//   // distance = all distances
-//   // surface = all checked  
-//   // units = Miles > don't clear? 
-// }
