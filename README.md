@@ -74,6 +74,7 @@ Sample JSON:
 - Set up filter to filter surface type
 - Sort data set by trail_length (default was by trail name)
 - No results
+- landing page of all results
 - Allow user to choose between MI and KMs (currently is in MI)
 - Display a set amount of description characters and implement a "read more" concept
 - High risk: Use local storage to save paths users want to try
