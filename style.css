@@ -40,13 +40,13 @@ h1 {
   width: 20%;
 }
 
-.filter-container,
-.settings-container {
+.filter-container {
   background-color: #F1F0F0;
   margin: 30px;
   padding: 10px;
   border-radius: 2px;
   box-shadow: 1px 3px 5px 1px #F79208;
+  border: 1px solid #e0e0e0;
 }
 
 .distance-selector {
@@ -184,11 +184,11 @@ main {
   flex-direction: column;
   margin: 20px;
   background-color: #F1F0F0;
-  border: 2px solid #08F792;
+  border: 1px solid #e0e0e0;;
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 2px 4px 5px 2px #e0e0e0;
-  /* box-shadow: 2px 4px 5px 2px #08F792; */
+  /* box-shadow: 2px 4px 5px 2px #e0e0e0; */
+  box-shadow: 1px 2px 3px 1px #F7086C;
 }
 
 .result-card:hover {
@@ -258,15 +258,22 @@ footer {
     align-items: center;
   }
 
+  .results-header-container {
+    display: flex;
+    flex: column;
+    align-items: flex-start;
+  }
+
+  .result-card {
+    margin: 15px;
+  }
+
   .result-row1 {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-left: 50px;
   }
 
   .result-row1-distance {
-    align-items: center;
-  }
-  
-}
+  padding-left: 50px;
+  } 
+

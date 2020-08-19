@@ -4,7 +4,6 @@ const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJK
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
 const lengthURL = (`trail_length`)
 
-// Add No Results Page - Currently not Working
 const noResultsPage = () => {
   const routeSection = document.querySelector(".results-section")
 
@@ -23,7 +22,6 @@ const noResultsPage = () => {
   noResults.append(noResultsLine2)
 }
 
-// Builds results to page in Miles
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
     const routeSection = document.querySelector(".results-section")
@@ -78,7 +76,6 @@ const listRoutes = (routeData) => {
   })
 }
 
-// Builds results to page in Kilos
 const listRoutesKm = (routeData) => {
   routeData.forEach((route) => {
     const routeSection = document.querySelector(".results-section")
@@ -135,7 +132,6 @@ const listRoutesKm = (routeData) => {
   })
 }
 
-// Checks Miles/KMs
 const checkUnits = () => {
   const unitsValue = document.querySelector(".units-selector").value;
   return unitsValue;
