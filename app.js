@@ -4,23 +4,23 @@ const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJK
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
 const lengthURL = (`trail_length`)
 
-const noResultsPage = () => {
-  const routeSection = document.querySelector(".results-section")
+// const noResultsPage = () => {
+//   const routeSectionNoResults = document.querySelector(".results-section")
 
-  const noResults = document.createElement("div")
-  noResults.classList.add("no-results")
-  routeSection.append(noResults) 
+//   const noResults = document.createElement("div")
+//   noResults.classList.add("no-results")
+//   routeSectionNoResults.append(noResults) 
 
-  const noResultsLine1 = document.createElement("p")
-  noResultsLine1.textContent = "Looks like you're blazing your own trail!"
-  noResultsLine1.classList.add("no-result-text-header")
-  noResults.append(noResultsLine1)
+//   const noResultsLine1 = document.createElement("p")
+//   noResultsLine1.textContent = "Looks like you're blazing your own trail!"
+//   noResultsLine1.classList.add("no-result-text-header")
+//   noResults.append(noResultsLine1)
 
-  const noResultsLine2 = document.createElement("p")
-  noResultsLine2.textContent = "Please update your search and try again."
-  noResultsLine2.classList.add("no-result-text-cta")
-  noResults.append(noResultsLine2)
-}
+//   const noResultsLine2 = document.createElement("p")
+//   noResultsLine2.textContent = "Please update your search and try again."
+//   noResultsLine2.classList.add("no-result-text-cta")
+//   noResults.append(noResultsLine2)
+// }
 
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
@@ -78,11 +78,11 @@ const listRoutes = (routeData) => {
 
 const listRoutesKm = (routeData) => {
   routeData.forEach((route) => {
-    const routeSection = document.querySelector(".results-section")
+    const routeSectionKM = document.querySelector(".results-section")
 
     const resultCard = document.createElement("div")
     resultCard.classList.add("result-card")
-    routeSection.append(resultCard)
+    routeSectionKM.append(resultCard)
 
     const resultCardRow1 = document.createElement("div")
     resultCardRow1.classList.add("result-row1")
@@ -141,6 +141,7 @@ const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
+
     const unitsURL = checkUnits();
 
     if (unitsURL === "kilos") {
@@ -212,6 +213,7 @@ const removeResults = () => {
     results.removeChild(results.lastChild)
   }
 } 
+
 
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
