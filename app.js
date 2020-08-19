@@ -1,6 +1,7 @@
-const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4");
+const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length");
 const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
 const lengthURL = (`trail_length`)
+
 
 const noResultsPage = () => {
   const routeSection = document.querySelector(".results-section")
@@ -9,30 +10,16 @@ const noResultsPage = () => {
   noResults.classList.add("no-results")
   routeSection.append(noResults) 
 
-  const noResultsTitle = document.createElement("p")
-  noResultsTitle.textContent = "Looks like you're blazing your own trail! Please update your search and try again."
-  noResultsTitle.classList.add("no-result-text")
-  noResults.append(noResultsTitle)
+  const noResultsLine1 = document.createElement("p")
+  noResultsLine1.textContent = "Looks like you're blazing your own trail!"
+  noResultsLine1.classList.add("no-result-text-header")
+  noResults.append(noResultsLine1)
+
+  const noResultsLine2 = document.createElement("p")
+  noResultsLine2.textContent = "Please update your search and try again."
+  noResultsLine2.classList.add("no-result-text-cta")
+  noResults.append(noResultsLine2)
 }
-
-
-const fetchRoutes = async (url) => {
-  try {
-    const response = await axios.get(url)
-    const routeData = response.data
-
-    if (routeData > 0) {
-      listRoutes(routeData);
-    } else {
-      noResultsPage();
-    }
-    
-  } catch (error) {
-    console.log(`Error: ${error}`)
-  }
-}
-
-fetchRoutes(allResults);
 
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
@@ -87,6 +74,27 @@ const listRoutes = (routeData) => {
     resultCardRow3.append(routeDescription)
   })
 }
+
+const fetchRoutes = async (url) => {
+  try {
+    const response = await axios.get(url)
+    const routeData = response.data
+
+    listRoutes(routeData);
+
+    if (routeData > 0) {
+      listRoutes(routeData);
+    } else {
+      noResultsPage();
+    }
+    
+  } catch (error) {
+    console.log(`Error: ${error}`)
+  }
+}
+
+const body = document.querySelector("body");
+body.onload = fetchRoutes(allResults);
 
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
