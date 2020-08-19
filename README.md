@@ -63,16 +63,19 @@ Sample JSON:
 - Identify API 
 - Set up API and render data on the page  
 - Set up filter to filter trail length
-- Set up the following states: filter removes old data set and updates with new set, no results
+- Set up the following states: filter removes old data set and updates with new set
+- Set up a clear filter that resets the filter to default, removes results that were there, and returns results to landing state (all results)
 - Display data with trail name and length 
 - Mobile compatibility
 
 #### PostMVP  
 
 - Display data with trail description and surface-type
-- Set up filter to filter surface typy
+- Set up filter to filter surface type
+- Sort data set by trail_length (default was by trail name)
+- No results
 - Allow user to choose between MI and KMs (currently is in MI)
-- Display a set amount of description characters and impement a "read more" concept
+- Display a set amount of description characters and implement a "read more" concept
 - High risk: Use local storage to save paths users want to try
 - High risk: Add second API to provide trail address (bike API does not supply address or location so this might be impossible)
 
