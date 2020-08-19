@@ -59,8 +59,14 @@ h1 {
   color: gray;
   border: 1px solid #e0e0e0;
   font-family: 'Quicksand', sans-serif;
+  box-shadow: 1px 3px 5px 1px #e0e0e0;
 }
 
+.distance-selector:hover, 
+.sort-selector:hover,
+.units-selector:hover {
+  background-color: #E8E8E6;
+}
 
 .distance-title,
 .surface-title {
@@ -81,11 +87,6 @@ h3 {
   height: 200px;
 }
 
-.radio {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-}
 
 .filter-button,
 .clear-button {
@@ -121,15 +122,19 @@ h3 {
 }
 
 .distance-container,
-.surface-container,
-.units-container { 
+.surface-container { 
   padding: 10px;
   line-height: 40px;
 }
 
+.units-container {
+  padding: 25px;
+
+}
+
 main {
   width: 80%;
-  margin: 50px;
+  margin: 25px;
   padding: 10px;
   border-radius: 2px;
   display: flex;
@@ -139,7 +144,35 @@ main {
 .results-header-container {
   display: flex;
   flex-direction: row;
+  /* align-items: center */
 }
+
+.results-title {
+  flex-grow: 1;
+}
+
+.sort-unit-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sort-selector,
+.units-selector {
+  font-size: 14px;
+  padding: 10px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #F7F7F6;
+  color: black;
+  border: 1px solid #e0e0e0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  box-shadow: 1px 3px 5px 1px #e0e0e0;
+}
+
 
 .results-section {
   display: flex;
