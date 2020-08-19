@@ -7,7 +7,6 @@
   <script defer src="./app.js"></script>
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
-  <!-- <h2>Check out New York State bike routes to blaze trails</h2> -->
   <title>Trailblaze: Discovering NY Bike Routes</title>
 </head>
 <body>
@@ -19,60 +18,67 @@
     </div>
   </header>
   <div class="aside-main-container">
-    <aside class="filter-container">
-      <div class="filter-heading">
-        <h3>Filter</h3>
-        <hr class="solid">
-      </div>
-      <div class="filter-distance-header">
-        <h4 class="distance-title">Distance</h4>
-      </div>
-      <div class="distance-container">
-        <select class="distance-selector">
-          <option value="all-distances">All Distances</option>
-          <option value="11">Less than 10 Miles</option>
-          <option value="10to26">10-25 Miles</option>
-          <option value="25to51">25-50 Miles</option>
-          <option value="50to101">50-100 Miles</option>
-          <option value="100">Greater than 100 Miles</option>
-        </select>
-      </div>
-      <div class="filter-surface-header">
-        <h4 class="surface-title">Surface</h4>
-      </div>
-      <div class="surface-container">
-        <form class="checkboxes">
-          <input type="checkbox"  class="surface-checkbox"  class="checkbox" id="paved" value="paved">
-          <label for="pavement">Pavement</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="dirt" value="dirt">
-          <label for="dirt">Dirt</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="gravel" value="gravel">
-          <label for="gravel">Gravel</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="stone-dust" value="stone_dust">
-          <label for="stone-dust">Stone Dust</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="boardwalk" value="boardwalk">
-          <label for="boardwalk">Boardwalk</label>
-        </form>
-      </div>
-      <div class="units-container">
-        <h3 class="units-title">Units</h3>
-      </div>
-      <div class="units-radio">
-        <input type="radio" id="miles" class="miles radio" value="miles" checked>
-        <label for="miles">Miles</label><br>
-        <input type="radio" id="kilos" class="kilos radio" value="kilos">
-        <label for="kilos">Kilometers</label>
-      </div>
-      <div class="filter-button-container">
-        <button class="filter-button" type="submit">Filter</button>
-        <button class="clear-button" type="submit">Clear</button>
-      </div>
-    </aside>
+    <aside>
+      <form class="filter-container">
+        <div class="filter-heading">
+          <h3>Filter</h3>
+          <hr class="solid">
+        </div>
+        <div class="filter-distance-header">
+          <h4 class="distance-title">Distance</h4>
+        </div>
+        <div class="distance-container">
+          <select class="distance-selector">
+            <option value="all-distances">All Distances</option>
+            <option value="11">Less than 10 Miles</option>
+            <option value="10to26">10-25 Miles</option>
+            <option value="25to51">25-50 Miles</option>
+            <option value="50to101">50-100 Miles</option>
+            <option value="100">Greater than 100 Miles</option>
+          </select>
+        </div>
+        <div class="filter-surface-header">
+          <h4 class="surface-title">Surface</h4>
+        </div>
+        <div class="surface-container">
+          <div class="checkboxes">
+            <input type="checkbox"  class="surface-checkbox"  class="checkbox" id="paved" value="paved" checked>
+            <label for="pavement">Pavement</label><br>
+            <input type="checkbox" class="surface-checkbox" class="checkbox" id="dirt" value="dirt" checked>
+            <label for="dirt">Dirt</label><br>
+            <input type="checkbox" class="surface-checkbox" class="checkbox" id="gravel" value="gravel" checked>
+            <label for="gravel">Gravel</label><br>
+            <input type="checkbox" class="surface-checkbox" class="checkbox" id="stone-dust" value="stone_dust" checked>
+            <label for="stone-dust">Stone Dust</label><br>
+            <input type="checkbox" class="surface-checkbox" class="checkbox" id="boardwalk" value="boardwalk" checked>
+            <label for="boardwalk">Boardwalk</label>
+          </div>
+        </div> 
+        <div class="filter-button-container">
+          <button class="filter-button" type="submit">Filter</button>
+          <button class="clear-button" type="reset">Clear</button>
+        </div>
+      </form>  
+    </aside>     
     <main class="results-container">
-      <div class="results-header">
-        <h3>Results</h3>
+      <div class="results-header-container">
+        <div><h3 class="results-title">Results</h3></div>
+        <div class="sort-unit-container">
+          <div class="sort-container">
+            <select class="sort-selector">
+              <option id="asc" value="asc">Ascending</option>
+              <option id="desc" value="desc">Descending</option>
+            </select>
+          </div>  
+          <div class="units-container">
+            <select class="units-selector">
+              <option id="miles" value="miles">Miles</option>
+              <option id="kilos" value="kilos">Kilometers</option>
+            </select>
+          </div> 
+        </div> 
       </div>
-      <div class="results-section"></div>
+      <div class="results-section"></div> 
     </main>
   </div>
   <footer>
