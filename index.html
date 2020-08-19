@@ -60,33 +60,35 @@
           <button class="clear-button" type="reset">Clear</button>
         </div>
       </form>  
-   
-      <div class="sort-order-container">
-        <div class="sort-header">
-          <h3 class="sort-title">Sort Order</h3>
+      <div class="settings-container">
+        <div class="settings-heading">
+          <h3>Settings</h3>
           <hr class="solid">
         </div>
-        <div class="sort-inputs">
-          <input type="radio" id="asc" name="sort-radios" value="asc" checked>
-          <label for="asc">Ascending</label><br>
-          <input type="radio" id="desc" name="sort-radios" value="desc">
-          <label for="kilos">Descending</label>
+        <div class="sort-order-container">
+          <div class="sort-header">
+            <h4 class="sort-title">Sort Order</h4>
+          </div>
+          <div class="sort-inputs">
+            <input type="radio" id="asc" name="sort-radios" value="asc" checked>
+            <label for="asc">Ascending</label><br>
+            <input type="radio" id="desc" name="sort-radios" value="desc">
+            <label for="kilos">Descending</label>
+          </div>
         </div>
+
+        <div class="units-container">
+          <div class="units-header">
+            <h4 class="units-title">Units</h4>
+          </div>
+          <div class="unit-inputs">
+            <input type="radio" id="miles" name="units-radios" value="miles" checked>
+            <label for="miles">Miles</label><br>
+            <input type="radio" id="kilos" name="units-radios" value="kilos">
+            <label for="kilos">Kilometers</label>
+          </div>
+        </div>  
       </div>
-
-      <div class="units-container">
-        <div class="units-header">
-          <h3 class="units-title">Units</h3>
-          <hr class="solid">
-        </div>
-        <div class="unit-inputs">
-          <input type="radio" id="miles" name="units-radios" value="miles" checked>
-          <label for="miles">Miles</label><br>
-          <input type="radio" id="kilos" name="units-radios" value="kilos">
-          <label for="kilos">Kilometers</label>
-        </div>
-      </div>  
-
     </aside>     
     <main class="results-container">
       <div class="results-header">

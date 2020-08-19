@@ -41,8 +41,7 @@ h1 {
 }
 
 .filter-container,
-.sort-order-container,
-.units-container {
+.settings-container {
   background-color: #F1F0F0;
   margin: 30px;
   padding: 10px;
