@@ -105,17 +105,12 @@ const listRoutesKm = (routeData) => {
     resultRow1Distance.classList.add("result-row1-distance")
     resultCardRow1.append(resultRow1Distance)
 
-    // const routeDistance = document.createElement("p")
-    // const routeDistanceName = route.trail_length
-    // routeDistance.classList.add("result-distance")
-    // routeDistance.textContent = `${routeDistanceName} mi`
-    // resultRow1Distance.append(routeDistance)
-
     const routeDistanceKM = document.createElement("p")
     const routeDistanceLenKm = route.trail_length
     let kmSum = routeDistanceLenKm * 1.60934
+    let roundedKM = Math.round(10 * kmSum) / 10;
     routeDistanceKM.classList.add("result-distance")
-    routeDistanceKM.textContent = `${kmSum} km`
+    routeDistanceKM.textContent = `${roundedKM} km`
     resultRow1Distance.append(routeDistanceKM)
 
     const resultCardRow2 = document.createElement("div")
@@ -140,6 +135,7 @@ const listRoutesKm = (routeData) => {
   })
 }
 
+// Checks Miles/KMs
 const checkUnits = () => {
   const unitsValue = document.querySelector("input[name=units-radios]:checked").value;
   return unitsValue;
@@ -150,8 +146,6 @@ const fetchRoutes = async (url) => {
     const response = await axios.get(url)
     const routeData = response.data
     const unitsURL = checkUnits();
-
-    // listRoutes(routeData)
 
     if (unitsURL === "kilos") {
       listRoutesKm(routeData);
