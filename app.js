@@ -1,8 +1,12 @@
 const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length");
 const allResultsDesc = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC");
 const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
-const resultsURLDesc = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
+const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
 const lengthURL = (`trail_length`)
+
+// const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4");
+// const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
+// const lengthURL = (`trail_length`)
 
 
 const noResultsPage = () => {
@@ -84,11 +88,11 @@ const fetchRoutes = async (url) => {
 
     listRoutes(routeData);
 
-    if (routeData > 0) {
-      listRoutes(routeData);
-    } else {
-      noResultsPage();
-    }
+    // if (routeData > 0) {
+    //   listRoutes(routeData);
+    // } else {
+    //   noResultsPage();
+    // }
     
   } catch (error) {
     console.log(`Error: ${error}`)
@@ -97,6 +101,8 @@ const fetchRoutes = async (url) => {
 
 // const body = document.querySelector("body");
 // body.onload = fetchRoutes(allResults);
+
+fetchRoutes(allResults);
 
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
@@ -120,16 +126,13 @@ const checkSurfaceFilter = () => {
   let checkedSurfaces = [];
   for (let i = 0; i < surfaceValue.length; i++) {
     checkedSurfaces.push(surfaceValue[i].value + " = 'Y'");
-    console.log(checkedSurfaces)
   }
   if (checkedSurfaces.length === 1) {
-    console.log(checkedSurfaces.toString())
     return checkedSurfaces.toString()
   } else if (checkedSurfaces.length > 1) {
     for (let i = 0; i < checkedSurfaces.length; i++) {
       let checkedSurfaceString = checkedSurfaces.join(" OR ")
       let surfacePara = ("(" + checkedSurfaceString + ")")
-      console.log(surfacePara);
       return surfacePara;
     }
   } else {
@@ -139,13 +142,13 @@ const checkSurfaceFilter = () => {
 
 const checkSort = () => {
   const sortValue = document.querySelector("input[name=sort-radios]:checked").value;
-  console.log(sortValue)
+  return sortValue;
 }
 
-const checkUnits = () => {
-  const unitsValue = document.querySelector("input[name=units-radios]:checked").value;
-  console.log(unitsValue)
-}
+// const checkUnits = () => {
+//   const unitsValue = document.querySelector("input[name=units-radios]:checked").value;
+//   console.log(unitsValue)
+// }
 
 const removeResults = () => {
   const results = document.querySelector(".results-section")
@@ -155,43 +158,43 @@ const removeResults = () => {
 } 
 
 const runFilter = () => {
-  checkSort()
-  checkUnits();
+  
+  removeResults();
+  
+  const distanceURL = checkDistanceFilter();
+  const surfaceURL = checkSurfaceFilter();
+  const sortURL = checkSort();
+  // const unitsURL = checkUnits();
 
-  // removeResults();
-
-  // const distanceURL = checkDistanceFilter();
-  // const surfaceURL = checkSurfaceFilter();
-
-  // if (sort === asc) {
-  //   if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
-  //     let url = (`${resultsURL}${surfaceURL}`)
-  //     fetchRoutes(url);
-  //   } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
-  //     let url = allResults;
-  //     fetchRoutes(url);
-  //   } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
-  //     let url = (`${resultsURL}${distanceURL}`)
-  //     fetchRoutes(url);
-  //   } else {
-  //     let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
-  //     fetchRoutes(url);
-  //   }
-  // } else {
-  //   if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
-  //     let url = (`${resultsURLDesc}${surfaceURL}`)
-  //     fetchRoutes(url);
-  //   } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
-  //     let url = allResultsDesc;
-  //     fetchRoutes(url);
-  //   } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
-  //     let url = (`${resuresultsURLDescltsURL}${distanceURL}`)
-  //     fetchRoutes(url);
-  //   } else {
-  //     let url = (`${resultsURLDesc}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
-  //     fetchRoutes(url);
-  //   }
-  // }
+  if (sortURL === "asc") {
+    if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+      let url = (`${resultsURL}${surfaceURL}`)
+      fetchRoutes(url);
+    } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+      let url = allResults;
+      fetchRoutes(url);
+    } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+      let url = (`${resultsURL}${distanceURL}`)
+      fetchRoutes(url);
+    } else {
+      let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+      fetchRoutes(url);
+    }
+  } else {
+    if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+      let url = (`${descResults}${surfaceURL}`)
+      fetchRoutes(url);
+    } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+      let url = allResultsDesc;
+      fetchRoutes(url);
+    } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+      let url = (`${descResults}${distanceURL}`)
+      fetchRoutes(url);
+    } else {
+      let url = (`${descResults}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+      fetchRoutes(url);
+    }
+  }
 }
 
 const filterButton = document.querySelector(".filter-button")
@@ -200,15 +203,87 @@ filterButton.addEventListener("click", (e) => {
   runFilter();
 })
 
+// const filterButton = document.querySelector(".filter-button")
+// filterButton.addEventListener("click", (e) => {
+//   e.preventDefault()
+//   removeResults();
+  
+//   const distanceURL = checkDistanceFilter();
+//   const surfaceURL = checkSurfaceFilter();
+//   const sortURL = checkSort();
+//   // const unitsURL = checkUnits();
+
+//   if (sortURL === "asc") {
+//     if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+//       let url = (`${resultsURL}${surfaceURL}`)
+//       fetchRoutes(url);
+//     } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+//       let url = allResults;
+//       fetchRoutes(url);
+//     } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+//       let url = (`${resultsURL}${distanceURL}`)
+//       fetchRoutes(url);
+//     } else {
+//       let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+//       fetchRoutes(url);
+//     }
+//   } else {
+//     if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+//       let url = (`${descResults}${surfaceURL}`)
+//       fetchRoutes(url);
+//     } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+//       let url = allResultsDesc;
+//       fetchRoutes(url);
+//     } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+//       let url = (`${descResults}${distanceURL}`)
+//       fetchRoutes(url);
+//     } else {
+//       let url = (`${descResults}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+//       fetchRoutes(url);
+//     }
+//   }
+// })
+
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
   removeResults();
   fetchRoutes(allResults);
 })
 
-// const toggleSort = document.querySelector(".sort")
-// toggleSort.addEventListener("click", () => {
-//   runFilter();
+const toggleSortAsc = document.querySelector("#asc")
+toggleSortAsc.addEventListener("click", () => {
+  runFilter();
+})
+
+const toggleSortDesc = document.querySelector("#desc")
+toggleSortDesc.addEventListener("click", () => {
+  runFilter();
+})
+
+
+
+// Working Code
+
+// const filterButton = document.querySelector(".filter-button")
+// filterButton.addEventListener("click", (e) => {
+//   e.preventDefault()
+
+//   removeResults();
+
+//   const distanceURL = checkDistanceFilter();  
+//   const surfaceURL = checkSurfaceFilter();
+
+//   if (distanceURL === "all-distances") { // If distance is all and surface has value 
+//     let url = (`${resultsURL}${surfaceURL}`)
+//     fetchRoutes(url);
+//   } else if (surfaceURL === "all-surfaces") { // If surface is all and surface has value 
+//     let url = (`${resultsURL}${distanceURL}`)
+//     fetchRoutes(url);
+//   } else if (distanceURL === "all-distances" || surfaceURL === "all-surfaces") {
+//     let url = allResults
+//     fetchRoutes(url);
+//   } else {
+//     let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`)
+//     fetchRoutes(url);
+//   }
 // })
-
-
