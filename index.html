@@ -19,7 +19,7 @@
     </div>
   </header>
   <div class="aside-main-container">
-    <aside class="filter-container">
+    <form class="filter-container">
       <div class="filter-heading">
         <h3>Filter</h3>
         <hr class="solid">
@@ -41,18 +41,18 @@
         <h4 class="surface-title">Surface</h4>
       </div>
       <div class="surface-container">
-        <form class="checkboxes">
-          <input type="checkbox"  class="surface-checkbox"  class="checkbox" id="paved" value="paved">
+        <div class="checkboxes">
+          <input type="checkbox"  class="surface-checkbox"  class="checkbox" id="paved" value="paved" checked>
           <label for="pavement">Pavement</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="dirt" value="dirt">
+          <input type="checkbox" class="surface-checkbox" class="checkbox" id="dirt" value="dirt" checked>
           <label for="dirt">Dirt</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="gravel" value="gravel">
+          <input type="checkbox" class="surface-checkbox" class="checkbox" id="gravel" value="gravel" checked>
           <label for="gravel">Gravel</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="stone-dust" value="stone_dust">
+          <input type="checkbox" class="surface-checkbox" class="checkbox" id="stone-dust" value="stone_dust" checked>
           <label for="stone-dust">Stone Dust</label><br>
-          <input type="checkbox" class="surface-checkbox" class="checkbox" id="boardwalk" value="boardwalk">
+          <input type="checkbox" class="surface-checkbox" class="checkbox" id="boardwalk" value="boardwalk" checked>
           <label for="boardwalk">Boardwalk</label>
-        </form>
+        </div>
       </div>
       <div class="units-container">
         <h3 class="units-title">Units</h3>
@@ -65,9 +65,9 @@
       </div>
       <div class="filter-button-container">
         <button class="filter-button" type="submit">Filter</button>
-        <button class="clear-button" type="submit">Clear</button>
+        <button class="clear-button" type="reset">Clear</button>
       </div>
-    </aside>
+    </form>
     <main class="results-container">
       <div class="results-header">
         <h3>Results</h3>

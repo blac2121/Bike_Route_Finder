@@ -1,5 +1,5 @@
 const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4");
-const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$where=`)
+const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
 const lengthURL = (`trail_length`)
 
 const fetchRoutes = async (url) => {
@@ -140,3 +140,14 @@ filterButton.addEventListener("click", (e) => {
   }
 })
 
+const clearButton = document.querySelector(".clear-button")
+
+clearButton.addEventListener("click", () => {
+  removeResults();
+  fetchRoutes(allResults);
+})
+// const clearFilter = () => {
+//   // distance = all distances
+//   // surface = all checked  
+//   // units = Miles > don't clear? 
+// }
