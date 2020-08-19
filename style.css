@@ -31,7 +31,7 @@ h1 {
 .aside-main-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 
 .aside {
@@ -63,8 +63,7 @@ h1 {
 
 
 .distance-title,
-.surface-title, 
-.units-title {
+.surface-title {
   margin-bottom: 5px;
 }
 
@@ -128,13 +127,18 @@ h3 {
   line-height: 40px;
 }
 
-.results-container {
+main {
   width: 80%;
   margin: 50px;
   padding: 10px;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
+}
+
+.results-header-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .results-section {

@@ -137,7 +137,7 @@ const listRoutesKm = (routeData) => {
 
 // Checks Miles/KMs
 const checkUnits = () => {
-  const unitsValue = document.querySelector("input[name=units-radios]:checked").value;
+  const unitsValue = document.querySelector(".units-selector").value;
   return unitsValue;
 }
 
@@ -206,7 +206,7 @@ const checkSurfaceFilter = () => {
 }
 
 const checkSort = () => {
-  const sortValue = document.querySelector("input[name=sort-radios]:checked").value;
+  const sortValue = document.querySelector(".sort-selector").value;
   return sortValue;
 }
 
@@ -268,22 +268,12 @@ filterButton.addEventListener("click", (e) => {
   runFilter();
 })
 
-const toggleSortAsc = document.querySelector("#asc")
-toggleSortAsc.addEventListener("click", () => {
+const toggleSort = document.querySelector(".sort-selector")
+toggleSort.addEventListener("change", () => {
   runFilter();
 })
 
-const toggleSortDesc = document.querySelector("#desc")
-toggleSortDesc.addEventListener("click", () => {
-  runFilter();
-})
-
-const toggleMiles = document.querySelector("#miles")
-toggleMiles.addEventListener("click", () => {
-  runFilter();
-})
-
-const toggleKilos = document.querySelector("#kilos")
-toggleKilos.addEventListener("click", () => {
+const toggleUnits = document.querySelector(".units-selector")
+toggleUnits.addEventListener("change", () => {
   runFilter();
 })
