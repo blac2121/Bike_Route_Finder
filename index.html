@@ -54,14 +54,27 @@
           <label for="boardwalk">Boardwalk</label>
         </div>
       </div>
-      <div class="units-container">
-        <h3 class="units-title">Units</h3>
+      <div class="sort-order-container">
+        <div class="sort-header">
+          <h3 class="sort-title">Sort Order</h3>
+        </div>
+        <div class="sort-inputs">
+          <input type="radio" id="asc" name="sort-radios" value="asc" checked>
+          <label for="asc">Ascending</label><br>
+          <input type="radio" id="desc" name="sort-radios" value="desc">
+          <label for="kilos">Descending</label>
+        </div>
       </div>
-      <div class="units-radio">
-        <input type="radio" id="miles" class="miles radio" value="miles" checked>
-        <label for="miles">Miles</label><br>
-        <input type="radio" id="kilos" class="kilos radio" value="kilos">
-        <label for="kilos">Kilometers</label>
+      <div class="units-container">
+        <div class="units-header">
+          <h3 class="units-title">Units</h3>
+        </div>
+        <div class="unit-inputs">
+          <input type="radio" id="miles" name="units-radios" value="miles" checked>
+          <label for="miles">Miles</label><br>
+          <input type="radio" id="kilos" name="units-radios" value="kilos">
+          <label for="kilos">Kilometers</label>
+        </div>
       </div>
       <div class="filter-button-container">
         <button class="filter-button" type="submit">Filter</button>
@@ -70,7 +83,7 @@
     </form>
     <main class="results-container">
       <div class="results-header">
-        <h3>Results</h3>
+        <h3 class="sort">Results</h3>
       </div>
       <div class="results-section"></div> 
     </main>

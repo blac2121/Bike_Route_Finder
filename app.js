@@ -1,5 +1,7 @@
 const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length");
+const allResultsDesc = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC");
 const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
+const resultsURLDesc = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
 const lengthURL = (`trail_length`)
 
 
@@ -93,8 +95,8 @@ const fetchRoutes = async (url) => {
   }
 }
 
-const body = document.querySelector("body");
-body.onload = fetchRoutes(allResults);
+// const body = document.querySelector("body");
+// body.onload = fetchRoutes(allResults);
 
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
@@ -135,6 +137,16 @@ const checkSurfaceFilter = () => {
   }
 }
 
+const checkSort = () => {
+  const sortValue = document.querySelector("input[name=sort-radios]:checked").value;
+  console.log(sortValue)
+}
+
+const checkUnits = () => {
+  const unitsValue = document.querySelector("input[name=units-radios]:checked").value;
+  console.log(unitsValue)
+}
+
 const removeResults = () => {
   const results = document.querySelector(".results-section")
   while (results.lastChild) {
@@ -142,28 +154,50 @@ const removeResults = () => {
   }
 } 
 
+const runFilter = () => {
+  checkSort()
+  checkUnits();
+
+  // removeResults();
+
+  // const distanceURL = checkDistanceFilter();
+  // const surfaceURL = checkSurfaceFilter();
+
+  // if (sort === asc) {
+  //   if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+  //     let url = (`${resultsURL}${surfaceURL}`)
+  //     fetchRoutes(url);
+  //   } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+  //     let url = allResults;
+  //     fetchRoutes(url);
+  //   } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+  //     let url = (`${resultsURL}${distanceURL}`)
+  //     fetchRoutes(url);
+  //   } else {
+  //     let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+  //     fetchRoutes(url);
+  //   }
+  // } else {
+  //   if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
+  //     let url = (`${resultsURLDesc}${surfaceURL}`)
+  //     fetchRoutes(url);
+  //   } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
+  //     let url = allResultsDesc;
+  //     fetchRoutes(url);
+  //   } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
+  //     let url = (`${resuresultsURLDescltsURL}${distanceURL}`)
+  //     fetchRoutes(url);
+  //   } else {
+  //     let url = (`${resultsURLDesc}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
+  //     fetchRoutes(url);
+  //   }
+  // }
+}
+
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
-
-  removeResults();
-
-  const distanceURL = checkDistanceFilter();  
-  const surfaceURL = checkSurfaceFilter();
-
-  if (distanceURL === "all-distances" && surfaceURL !== "all-surfaces") { // If distance is all and surface has value 
-    let url = (`${resultsURL}${surfaceURL}`)
-    fetchRoutes(url);
-  } else if (distanceURL === "all-distances" && surfaceURL === "all-surfaces") { // If surface is all and distance is all 
-    let url = allResults;
-    fetchRoutes(url);
-  } else if (surfaceURL === "all-surfaces" && distanceURL !== "all-distances") { // If surface is all and distance has value 
-    let url = (`${resultsURL}${distanceURL}`)
-    fetchRoutes(url);
-  } else {
-    let url = (`${resultsURL}${distanceURL} AND ${surfaceURL}`) // Distance and Surface has value
-    fetchRoutes(url);
-  }
+  runFilter();
 })
 
 const clearButton = document.querySelector(".clear-button")
@@ -171,3 +205,10 @@ clearButton.addEventListener("click", () => {
   removeResults();
   fetchRoutes(allResults);
 })
+
+// const toggleSort = document.querySelector(".sort")
+// toggleSort.addEventListener("click", () => {
+//   runFilter();
+// })
+
+

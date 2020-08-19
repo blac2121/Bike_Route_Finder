@@ -153,7 +153,19 @@ h3 {
   /* border: 2px solid #08F792; */
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 1px 2px 3px 2px #08F792;
+  box-shadow: 1px 2px 3px 2px #08F71A;
+}
+
+.result-card-green {
+  box-shadow: 1px 2px 3px 2px #08F71A;
+}
+
+.result-card-blue {
+  box-shadow: 1px 2px 3px 2px #08E4F7;
+}
+
+.result-card-pink {
+  box-shadow: 1px 2px 3px 2px #F7086C;
 }
 
 .result-card:hover {
