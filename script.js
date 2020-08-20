@@ -24,19 +24,27 @@ const noResults = () => {
   noResults.append(noResultsText)
 }
 
+
 // Builds Result Cards in Miles
 const listRoutes = (routeData) => {
-  routeData.forEach((route) => {
+  routeData.forEach((route, i) => {
+  
     const routeSection = document.querySelector(".results-section")
 
     const resultCard = document.createElement("div")
     resultCard.classList.add("result-card")
     routeSection.append(resultCard)
 
+    if (i % 2 === 0) {
+      resultCard.classList.add("result-color-green") 
+    } else if (i % 2 != 0) {
+      resultCard.classList.add("result-color-blue")
+    }  
+  
     const resultCardRow1 = document.createElement("div")
     resultCardRow1.classList.add("result-row1")
     resultCard.append(resultCardRow1)
-
+    
     const resultRow1Title = document.createElement("div")
     resultRow1Title.classList.add("result-row1-title")
     resultCardRow1.append(resultRow1Title)
@@ -84,6 +92,7 @@ const listRoutes = (routeData) => {
     resultCardRow3.append(routeDescription)
   })
 }
+
 
 // Builds Result Cards in Kilos
 const listRoutesKm = (routeData) => {

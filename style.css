@@ -41,6 +41,7 @@ h1 {
   border-radius: 2px;
   box-shadow: 1px 3px 5px 1px #F79208;
   border: 1px solid #e0e0e0;
+  min-width: 185px;
 }
 
 h3 {
@@ -182,7 +183,15 @@ main {
   border: 1px solid #e0e0e0;;
   border-radius: 3px;
   cursor: pointer;
+  /* box-shadow: 1px 2px 3px 1px #08F745; */
+}
+
+.result-color-green {
   box-shadow: 1px 2px 3px 1px #08F745;
+}
+
+.result-color-blue {
+  box-shadow: 1px 2px 3px 1px #08BAF7;
 }
 
 .result-card:hover {
@@ -204,6 +213,7 @@ main {
 .result-distance {
   flex-grow: 1;
   padding-right: 50px;
+  white-space: nowrap;
 }
 
 .result-surface {
@@ -233,7 +243,16 @@ footer {
   text-align: center;
 } 
 
-@media (max-width: 480px) {
+/* Tablet Media Query */
+@media (max-width: 768px) {
+  .filter-container {
+    width: 30%;
+    align-items: center;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 568px) {
   .aside-main-container {
     display: flex;
     flex-direction: column;
