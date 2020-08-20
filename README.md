@@ -131,7 +131,7 @@ function reverse(string) {
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes. 
- #. Moved fitler section from top below the header to side on desktop view because there were not enough filter items to fit across the page and looked great as a side bar. 
+  
+ - Moved fitler section from top below the header to side on desktop view because there were not enough filter items to fit across the page and looked great as a side bar. 
  
  
