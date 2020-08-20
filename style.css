@@ -233,7 +233,16 @@ footer {
   text-align: center;
 } 
 
-@media (max-width: 480px) {
+/* Tablet Media Query */
+@media (max-width: 768px) {
+  .filter-container {
+    width: 30%;
+    align-items: center;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 568px) {
   .aside-main-container {
     display: flex;
     flex-direction: column;
