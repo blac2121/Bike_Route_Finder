@@ -122,11 +122,26 @@ Sample JSON:
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+This code loops through the surface type filter to grab the values of the surface types and constructs the values into a string to be fed into to API call. The results coulb one or few so it was much more involved than the distance single value. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+const checkSurfaceFilter = () => {
+  const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
+  let checkedSurfaces = [];
+  for (let i = 0; i < surfaceValue.length; i++) {
+    checkedSurfaces.push(surfaceValue[i].value + " = 'Y'");
+  }
+  if (checkedSurfaces.length === 1) {
+    return checkedSurfaces.toString()
+  } else if (checkedSurfaces.length > 1) {
+    for (let i = 0; i < checkedSurfaces.length; i++) {
+      let checkedSurfaceString = checkedSurfaces.join(" OR ")
+      let surfacePara = ("(" + checkedSurfaceString + ")")
+      return surfacePara;
+    }
+  } else {
+    return "all-surfaces"
+  }
 }
 ```
 
