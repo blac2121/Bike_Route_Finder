@@ -105,7 +105,7 @@ Sample JSON:
 | Base HTML: Results section| H | 3hrs| 30mins | 30mins |
 | Base HTML: Remove old results| H | 3hrs| 2hrs | 2hrs |
 | CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
-| CSS: Results section| H | 3hrs| 4hrs | 4hrs |
+| CSS: Results section| H | 3hrs| 6hrs | 6hrs |
 | Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
 | Adding Surface Type in filter| M | 3hrs| 30mins | 30mins |
 | Filter by surface and distance | M | 3hrs| 5hrs | 5hrs |
@@ -113,11 +113,11 @@ Sample JSON:
 | Clear filter | M | 3hrs| 30mins | 30mins |
 | Adding Surface Type to results| M | 5hrs| 30mins | 30mins |
 | No results view: HTML and CSS| M | 5hrs| 5hrs | 5hrs |
+| Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
 | Finding API to accept a trail name| L | 3hrs| 0 | - |
 | Hooking up address API| L | 3hrs| 0 | - |
-| Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
 | Saving trails to try | L | 3hrs| 0 | - |
-| Total | H | 42hrs| 36 | 36 |
+| Total | H | 42hrs| 38 | 38 |
 
 
 ## Code Snippet
