@@ -117,7 +117,7 @@ Sample JSON:
 | Hooking up address API| L | 3hrs| 0 | - |
 | Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
 | Saving trails to try | L | 3hrs| 0 | - |
-| Total | H | 42hrs| 0 | - |
+| Total | H | 42hrs| 36 | 36 |
 
 
 ## Code Snippet
