@@ -6,7 +6,7 @@ Trailblaze: Discover your Next Bike Route
 
 ## Project Description
 
-Calling all cyclists — Locate New York State bike routes to blaze trails!
+Calling all cyclists — check out New York State extensive list of bike routes to plan your next adventure!
 
 ## API and Data Sample
 
