@@ -4,24 +4,6 @@ const resultsURL =  (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJ
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y' AND `)
 const lengthURL = (`trail_length`)
 
-// const noResultsPage = () => {
-//   const routeSectionNoResults = document.querySelector(".results-section")
-
-//   const noResults = document.createElement("div")
-//   noResults.classList.add("no-results")
-//   routeSectionNoResults.append(noResults) 
-
-//   const noResultsLine1 = document.createElement("p")
-//   noResultsLine1.textContent = "Looks like you're blazing your own trail!"
-//   noResultsLine1.classList.add("no-result-text-header")
-//   noResults.append(noResultsLine1)
-
-//   const noResultsLine2 = document.createElement("p")
-//   noResultsLine2.textContent = "Please update your search and try again."
-//   noResultsLine2.classList.add("no-result-text-cta")
-//   noResults.append(noResultsLine2)
-// }
-
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
     const routeSection = document.querySelector(".results-section")
@@ -143,6 +125,16 @@ const checkUnits = () => {
   return unitsValue;
 }
 
+const noResults = () => {
+  const noResultsDiv = document.querySelector(".no-results");
+  let resultStyles = getComputedStyle(noResultsDiv);
+  if (resultStyles.getPropertyValue("display") === "none") {
+    noResultsDiv.style.display = "block"
+  } else {
+    noResultsDiv.style.display = "none"
+  }
+}
+
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
@@ -157,21 +149,21 @@ const fetchRoutes = async (url) => {
       listRoutes(routeData);
     }
     
-    // if (routeData > 0) {
-    //   listRoutes(routeData);
-    // } else {
-    //   noResultsPage();
-    // }
+    if (routeData > 0) {
+      listRoutes(routeData);
+    } else {
+      noResults();
+    }
     
   } catch (error) {
     console.log(`Error: ${error}`)
   }
 }
 
-// const body = document.querySelector("body");
-// body.onload = fetchRoutes(allResults);
+const body = document.querySelector("body");
+body.onload = fetchRoutes(allResults);
 
-fetchRoutes(allResults);
+// fetchRoutes(allResults);
 
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
@@ -220,7 +212,6 @@ const removeResults = () => {
     results.removeChild(results.lastChild)
   }
 } 
-
 
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
