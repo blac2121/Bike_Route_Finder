@@ -1,7 +1,7 @@
-const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length");
-const allResultsDesc = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC");
-const resultsURL = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=`)
-const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=`)
+const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=biking ='Y'");
+const allResultsDesc = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y'");
+const resultsURL =  (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=biking ='Y' AND `)
+const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y' AND `)
 const lengthURL = (`trail_length`)
 
 // const noResultsPage = () => {
@@ -48,10 +48,23 @@ const listRoutes = (routeData) => {
     resultRow1Distance.classList.add("result-row1-distance")
     resultCardRow1.append(resultRow1Distance)
 
-    const routeDistance = document.createElement("p")
-    const routeDistanceName = route.trail_length
+    // const routeDistance = document.createElement("p")
+    // const routeDistanceName = route.trail_length
+    // routeDistance.classList.add("result-distance")
+    // routeDistance.textContent = `${routeDistanceName} mi`
+    // resultRow1Distance.append(routeDistance)
+    // console.log(routeDistanceName)
+
+    let routeDistance = document.createElement("p")
+    let routeDistanceName = route.trail_length
     routeDistance.classList.add("result-distance")
-    routeDistance.textContent = `${routeDistanceName} mi`
+
+    if (routeDistanceName === undefined) {
+      routeDistance.textContent = `N/A`
+    } else {
+      routeDistance.textContent = `${routeDistanceName} mi`
+    }
+
     resultRow1Distance.append(routeDistance)
 
     const resultCardRow2 = document.createElement("div")
@@ -141,6 +154,7 @@ const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
+    console.log(routeData)
 
     const unitsURL = checkUnits();
 

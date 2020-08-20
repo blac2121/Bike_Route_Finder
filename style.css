@@ -187,8 +187,7 @@ main {
   border: 1px solid #e0e0e0;;
   border-radius: 3px;
   cursor: pointer;
-  /* box-shadow: 2px 4px 5px 2px #e0e0e0; */
-  box-shadow: 1px 2px 3px 1px #F7086C;
+  box-shadow: 1px 2px 3px 1px #08F745;
 }
 
 .result-card:hover {
