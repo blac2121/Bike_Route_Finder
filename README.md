@@ -88,7 +88,7 @@ Sample JSON:
 |Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
 |Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
 |Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / Picking KM or MI| Complete
-|Thurs, Aug 20| No results / Show more Description / generate multiple card colors / get address / Saving trails to try | Incomplete
+|Thurs, Aug 20| No results / Show more Description / generate multiple card colors / get address / Saving trails to try | Partial
 |Fri, Aug 21| Presentations | Incomplete
 
 ## Priority Matrix
@@ -111,11 +111,11 @@ Sample JSON:
 | Filter by surface and distance | M | 3hrs| 5hrs | 5hrs |
 | Sort API results by trail length | M | 3hrs| 30mins | 30mins |
 | Clear filter | M | 3hrs| 30mins | 30mins |
-| Adding Surface Type to results| M | 5hrs| 0 | - |
-| No results view: HTML and CSS| M | 5hrs| 0 | - |
+| Adding Surface Type to results| M | 5hrs| 30mins | 30mins |
+| No results view: HTML and CSS| M | 5hrs| 5hrs | 5hrs |
 | Finding API to accept a trail name| L | 3hrs| 0 | - |
 | Hooking up address API| L | 3hrs| 0 | - |
-| Filtering with KM or MI| L | 3hrs| 0 | - |
+| Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
 | Saving trails to try | L | 3hrs| 0 | - |
 | Total | H | 42hrs| 0 | - |
 
@@ -132,3 +132,6 @@ function reverse(string) {
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes. 
+ #. Moved fitler section from top below the header to side on desktop view because there were not enough filter items to fit across the page and looked great as a side bar. 
+ 
+ 
