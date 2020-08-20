@@ -1,10 +1,11 @@
+// URL Pieces to be used in filter and fetch results
 const allResults = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=biking ='Y'");
 const allResultsDesc = ("https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y'");
 const resultsURL =  (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length&$where=biking ='Y' AND `)
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y' AND `)
 const lengthURL = (`trail_length`)
 
-
+// Builds No Results page
 const noResults = () => {
   const routeSection = document.querySelector(".results-section")
 
@@ -23,6 +24,7 @@ const noResults = () => {
   noResults.append(noResultsText)
 }
 
+// Builds Result Cards in Miles
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
     const routeSection = document.querySelector(".results-section")
@@ -83,6 +85,7 @@ const listRoutes = (routeData) => {
   })
 }
 
+// Builds Result Cards in Kilos
 const listRoutesKm = (routeData) => {
   routeData.forEach((route) => {
     const routeSectionKM = document.querySelector(".results-section")
@@ -139,16 +142,17 @@ const listRoutesKm = (routeData) => {
   })
 }
 
+// Gets the value of the miles/kilos dropdown
 const checkUnits = () => {
   const unitsValue = document.querySelector(".units-selector").value;
   return unitsValue;
 }
 
+// Gets results from the API
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
-    console.log(routeData)
 
     const unitsURL = checkUnits();
 
@@ -169,11 +173,11 @@ const fetchRoutes = async (url) => {
   }
 }
 
+// Renders all results upon page load to create a landing page experience
 const body = document.querySelector("body");
 body.onload = fetchRoutes(allResults);
 
-// fetchRoutes(allResults);
-
+// Gets distance filter value and turns it into a URL to be fed into the filter
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
   if (distanceValue === "all-distances") {
@@ -191,6 +195,7 @@ const checkDistanceFilter = () => {
   }  
 }
 
+// Gets surface filter value and turns it into a URL to be fed into the filter
 const checkSurfaceFilter = () => {
   const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
   let checkedSurfaces = [];
@@ -210,11 +215,14 @@ const checkSurfaceFilter = () => {
   }
 }
 
+// Gets the value of the asc/desc dropdown
 const checkSort = () => {
   const sortValue = document.querySelector(".sort-selector").value;
   return sortValue;
 }
 
+
+// Removes result cards or no result view
 const removeResults = () => {
   const results = document.querySelector(".results-section")
   while (results.lastChild) {
@@ -222,13 +230,7 @@ const removeResults = () => {
   }
 } 
 
-const clearButton = document.querySelector(".clear-button")
-clearButton.addEventListener("click", () => {
-  removeResults();
-  // noResults(); this only works on the no results page and not when using it with a full filter
-  fetchRoutes(allResults);
-})
-
+// Runs the filter and constructs the correct URL to be fed through the fetch function
 const runFilter = () => {
   
   removeResults();
@@ -268,17 +270,27 @@ const runFilter = () => {
   }
 }
 
+// Filter button listener 
 const filterButton = document.querySelector(".filter-button")
 filterButton.addEventListener("click", (e) => {
   e.preventDefault()
   runFilter();
 })
 
+// The filter clear button which returns the filter to all results
+const clearButton = document.querySelector(".clear-button")
+clearButton.addEventListener("click", () => {
+  removeResults();
+  fetchRoutes(allResults);
+})
+
+// Sort dropdown listener 
 const toggleSort = document.querySelector(".sort-selector")
 toggleSort.addEventListener("change", () => {
   runFilter();
 })
 
+// Miles/Kilos dropdown listener 
 const toggleUnits = document.querySelector(".units-selector")
 toggleUnits.addEventListener("change", () => {
   runFilter();
