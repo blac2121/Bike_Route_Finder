@@ -13,9 +13,14 @@ const noResults = () => {
   routeSection.append(noResults) 
 
   const noResultsTitle = document.createElement("p")
-  noResultsTitle.textContent = "Looks like you're blazing your own trail! Please update your search and try again."
-  noResultsTitle.classList.add("no-result-text")
+  noResultsTitle.textContent = "Looks like you're blazing your own trail!"
+  noResultsTitle.classList.add("no-result-title")
   noResults.append(noResultsTitle)
+
+  const noResultsText = document.createElement("p")
+  noResultsText.textContent = "Please update your search and try again."
+  noResultsText.classList.add("no-result-text")
+  noResults.append(noResultsText)
 }
 
 const listRoutes = (routeData) => {
