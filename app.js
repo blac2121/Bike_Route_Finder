@@ -135,6 +135,16 @@ const noResults = () => {
   }
 }
 
+// const clearNoResults = () => {
+//   const noResultsDiv = document.querySelector(".no-results");
+//   let resultStyles = getComputedStyle(noResultsDiv);
+//   if (resultStyles.getPropertyValue("display") === "block") {
+//     noResultsDiv.style.display = "none"
+//   } else {
+//     noResultsDiv.style.display = "block"
+//   }
+// }
+
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
@@ -149,7 +159,7 @@ const fetchRoutes = async (url) => {
       listRoutes(routeData);
     }
     
-    if (routeData > 0) {
+    if (routeData != 0) {
       listRoutes(routeData);
     } else {
       noResults();
@@ -216,6 +226,7 @@ const removeResults = () => {
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
   removeResults();
+  noResults();
   fetchRoutes(allResults);
 })
 
