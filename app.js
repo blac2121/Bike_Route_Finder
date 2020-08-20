@@ -48,13 +48,6 @@ const listRoutes = (routeData) => {
     resultRow1Distance.classList.add("result-row1-distance")
     resultCardRow1.append(resultRow1Distance)
 
-    // const routeDistance = document.createElement("p")
-    // const routeDistanceName = route.trail_length
-    // routeDistance.classList.add("result-distance")
-    // routeDistance.textContent = `${routeDistanceName} mi`
-    // resultRow1Distance.append(routeDistance)
-    // console.log(routeDistanceName)
-
     let routeDistance = document.createElement("p")
     let routeDistanceName = route.trail_length
     routeDistance.classList.add("result-distance")
