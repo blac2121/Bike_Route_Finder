@@ -4,6 +4,20 @@ const resultsURL =  (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJ
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y' AND `)
 const lengthURL = (`trail_length`)
 
+
+const noResults = () => {
+  const routeSection = document.querySelector(".results-section")
+
+  const noResults = document.createElement("div")
+  noResults.classList.add("no-results")
+  routeSection.append(noResults) 
+
+  const noResultsTitle = document.createElement("p")
+  noResultsTitle.textContent = "Looks like you're blazing your own trail! Please update your search and try again."
+  noResultsTitle.classList.add("no-result-text")
+  noResults.append(noResultsTitle)
+}
+
 const listRoutes = (routeData) => {
   routeData.forEach((route) => {
     const routeSection = document.querySelector(".results-section")
@@ -125,26 +139,6 @@ const checkUnits = () => {
   return unitsValue;
 }
 
-const noResults = () => {
-  const noResultsDiv = document.querySelector(".no-results");
-  let resultStyles = getComputedStyle(noResultsDiv);
-  if (resultStyles.getPropertyValue("display") === "none") {
-    noResultsDiv.style.display = "block"
-  } else {
-    noResultsDiv.style.display = "none"
-  }
-}
-
-// const clearNoResults = () => {
-//   const noResultsDiv = document.querySelector(".no-results");
-//   let resultStyles = getComputedStyle(noResultsDiv);
-//   if (resultStyles.getPropertyValue("display") === "block") {
-//     noResultsDiv.style.display = "none"
-//   } else {
-//     noResultsDiv.style.display = "block"
-//   }
-// }
-
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
@@ -159,7 +153,7 @@ const fetchRoutes = async (url) => {
       listRoutes(routeData);
     }
     
-    if (routeData != 0) {
+    if (routeData.length != 0) {
       listRoutes(routeData);
     } else {
       noResults();
@@ -226,7 +220,7 @@ const removeResults = () => {
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
   removeResults();
-  noResults();
+  // noResults(); this only works on the no results page and not when using it with a full filter
   fetchRoutes(allResults);
 })
 
