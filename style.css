@@ -5,11 +5,9 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  background-color: #FAF9F7;
 }
 
 .header-container {
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +16,6 @@ h1 {
   font-size: 28px;
   margin: 20px 0 20px 20px;
   font-weight: 500;
-  height: 25px;
 }
 
 .banner-container {
@@ -28,17 +25,14 @@ h1 {
   height: 475px;
 }
 
+/* Div for Filter and Results Section  */
+
 .aside-main-container {
   display: flex;
   flex-direction: row;
-  /* align-items: flex-start; */
 }
 
-.aside {
-  display: flex;
-  flex-flow: row wrap;
-  width: 20%;
-}
+/* Filter  */
 
 .filter-container {
   background-color: #F1F0F0;
@@ -47,6 +41,25 @@ h1 {
   border-radius: 2px;
   box-shadow: 1px 3px 5px 1px #F79208;
   border: 1px solid #e0e0e0;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+hr {
+  border-top: 1px solid #ccc; 
+}
+
+.distance-title,
+.surface-title {
+  margin-bottom: 5px;
+}
+
+.distance-container,
+.surface-container { 
+  padding: 10px;
+  line-height: 40px;
 }
 
 .distance-selector {
@@ -68,33 +81,18 @@ h1 {
   background-color: #E8E8E6;
 }
 
-.distance-title,
-.surface-title {
-  margin-bottom: 5px;
-}
-
-hr {
-  border-top: 1px solid #ccc; 
-}
-
-h3 {
-  font-size: 24px;
-}
-
-.checkbox {
+.surface-checkbox {
   cursor: pointer;
-  width: 200px;
-  height: 200px;
+  width: 18px;
+  height: 18px;
 }
-
 
 .filter-button,
 .clear-button {
   width: 100%;
-  margin: 30px 0 10px 0;
+  margin: 18px 0 10px 0;
   font-size: 18px; 
   padding: 10px 25px;
-  text-align: center;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -107,35 +105,25 @@ h3 {
 
 .filter-button:hover {
   background-color: #FBB130;
-  
 }
 
 .clear-button {
   background-color: #F7F7F6;
   color: gray;
   border: 1px solid #e0e0e0;
-  margin: 5px 0 0 0;
+  margin: 5px 0 10px 0;
 }
 
 .clear-button:hover {
   background-color: #E8E8E6;
 }
 
-.distance-container,
-.surface-container { 
-  padding: 10px;
-  line-height: 40px;
-}
 
-.units-container {
-  padding: 25px;
-
-}
+/* Results Section */
 
 main {
   width: 80%;
   margin: 25px;
-  padding: 10px;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -144,7 +132,6 @@ main {
 .results-header-container {
   display: flex;
   flex-direction: row;
-  /* align-items: center */
 }
 
 .results-title {
@@ -157,6 +144,10 @@ main {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+}
+
+.units-container {
+  padding: 25px;
 }
 
 .sort-selector,
@@ -173,10 +164,10 @@ main {
   box-shadow: 1px 3px 5px 1px #e0e0e0;
 }
 
-.no-results {
-  display: none;
+.no-result-title,
+.no-result-text {
+  text-align: center;
 }
-
 
 .results-section {
   display: flex;
@@ -261,7 +252,7 @@ footer {
 
   .results-header-container {
     display: flex;
-    flex: column;
+    flex-direction: column;
     align-items: flex-start;
   }
 
@@ -275,7 +266,7 @@ footer {
   }
 
   .result-row1-distance {
-  padding-left: 50px;
+    padding-left: 50px;
   } 
 
   .result-row2 {
@@ -285,5 +276,4 @@ footer {
     justify-content: space-between;
     font-style: italic;
   }
-  
-
+}
