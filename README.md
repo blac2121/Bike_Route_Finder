@@ -124,7 +124,7 @@ Sample JSON:
 
 This code loops through the surface type filter to grab the values of the surface types and constructs the values into a string to be fed into to API call. The results coulb one or few so it was much more involved than the distance single value. 
 
-```
+```Javascript
 const checkSurfaceFilter = () => {
   const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
   let checkedSurfaces = [];
