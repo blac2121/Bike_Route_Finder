@@ -127,7 +127,12 @@ const checkUnits = () => {
 
 const noResults = () => {
   const noResultsDiv = document.querySelector(".no-results");
-  noResultsDiv.getElementsByClassName.display = "block";
+  let resultStyles = getComputedStyle(noResultsDiv);
+  if (resultStyles.getPropertyValue("display") === "none") {
+    noResultsDiv.style.display = "block"
+  } else {
+    noResultsDiv.style.display = "none"
+  }
 }
 
 const fetchRoutes = async (url) => {
