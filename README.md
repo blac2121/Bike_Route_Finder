@@ -6,7 +6,7 @@ Trailblaze: Discover your Next Bike Route
 
 ## Project Description
 
-Calling all cyclists — Locate New York State bike routes to blaze trails!
+Calling all cyclists — check out New York State extensive list of bike routes to plan your next adventure!
 
 ## API and Data Sample
 
@@ -63,16 +63,20 @@ Sample JSON:
 - Identify API 
 - Set up API and render data on the page  
 - Set up filter to filter trail length
-- Set up the following states: filter removes old data set and updates with new set, no results
+- Set up the following states: filter removes old data set and updates with new set
+- Set up a clear filter that resets the filter to default, removes results that were there, and returns results to landing state (all results)
 - Display data with trail name and length 
 - Mobile compatibility
 
 #### PostMVP  
 
 - Display data with trail description and surface-type
-- Set up filter to filter surface typy
+- Set up filter to filter surface type
+- Sort data set by trail_length (default was by trail name)
+- No results
+- landing page of all results
 - Allow user to choose between MI and KMs (currently is in MI)
-- Display a set amount of description characters and impement a "read more" concept
+- Display a set amount of description characters and implement a "read more" concept
 - High risk: Use local storage to save paths users want to try
 - High risk: Add second API to provide trail address (bike API does not supply address or location so this might be impossible)
 
@@ -80,11 +84,11 @@ Sample JSON:
 
 |  Day |Deliverable| Status
 |---|---| ---|
-|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Mon, Aug 17|Project approval / API: Adding filter to feed to API|Incomplete
-|Tues, Aug 18|Base HTML: Header, Footer, search section, results section, no results view| Incomplete
-|Wed, Aug 19|Mobile Optimization / CSS: Header, Footer, search section, results section, no results view | Incomplete
-|Thurs, Aug 20| Picking KM or MI / Get Address / Saving trails to try | Incomplete
+|Aug 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
+|Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
+|Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / Picking KM or MI| Complete
+|Thurs, Aug 20| Done: No results / Done: generate multiple card colors / Show more Description / get address / Saving trails to try | Partial
 |Fri, Aug 21| Presentations | Incomplete
 
 ## Priority Matrix
@@ -95,31 +99,54 @@ Sample JSON:
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Get API to feed to the page | H | 3hrs| 0 | - |
-| Adding filter parameters to API | H | 3hrs| 0 | - |
-| Base HTML: Header, Footer, Filter Section| H | 3hrs| 0 | - |
-| Base HTML: Results section| H | 3hrs| 0 | - |
-| Base HTML: No results view| H | 3hrs| 0 | - |
-| CSS: Header, Footer, Filter section| H | 3hrs| 0 | - |
-| CSS: Results section| H | 3hrs| 0 | - |
-| CSS: No Results section| H | 3hrs| 0 | - |
-| Mobile Optimization | H | 3hrs| 0 | - |
-| Finding API to accept a trail name| H | 3hrs| 0 | - |
-| Hooking up address API|H | 3hrs| 0 | - |
-| Filtering with KM or MI| H | 3hrs| 0 | - |
-| Saving trails to try | H | 3hrs| 0 | - |
-| Total | H | 39hrs| 0 | - |
+| Get API to feed to the page | H | 3hrs| 30mins | 30mins |
+| Adding filter parameters to API | H | 3hrs| 5hrs | 5hrs |
+| Base HTML: Header, Footer, Filter Section| H | 3hrs| 3hrs | 2.5hrs |
+| Base HTML: Results section| H | 3hrs| 30mins | 30mins |
+| Base HTML: Remove old results| H | 3hrs| 2hrs | 2hrs |
+| CSS: Header, Footer, Filter section| H | 3hrs| 4hrs | 4hrs |
+| CSS: Results section| H | 3hrs| 6hrs | 6hrs |
+| Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
+| Adding Surface Type in filter| M | 3hrs| 30mins | 30mins |
+| Filter by surface and distance | M | 3hrs| 6hrs | 6hrs |
+| Sort API results by trail length | M | 3hrs| 30mins | 30mins |
+| Clear filter | M | 3hrs| 30mins | 30mins |
+| Adding Surface Type to results| M | 5hrs| 30mins | 30mins |
+| No results view: HTML and CSS| M | 5hrs| 6hrs | 6hrs |
+| Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
+| Finding API to accept a trail name| L | 3hrs| 0 | - |
+| Hooking up address API| L | 3hrs| 0 | - |
+| Saving trails to try | L | 3hrs| 0 | - |
+| Total | H | 42hrs| 40hrs | 40hrs |
 
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+This code loops through the surface type filter to grab the values of the surface types and constructs the values into a string to be fed into to API call. The results coulb one or few so it was much more involved than the distance single value. 
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
+```Javascript
+const checkSurfaceFilter = () => {
+  const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
+  let checkedSurfaces = [];
+  for (let i = 0; i < surfaceValue.length; i++) {
+    checkedSurfaces.push(surfaceValue[i].value + " = 'Y'");
+  }
+  if (checkedSurfaces.length === 1) {
+    return checkedSurfaces.toString()
+  } else if (checkedSurfaces.length > 1) {
+    for (let i = 0; i < checkedSurfaces.length; i++) {
+      let checkedSurfaceString = checkedSurfaces.join(" OR ")
+      let surfacePara = ("(" + checkedSurfaceString + ")")
+      return surfacePara;
+    }
+  } else {
+    return "all-surfaces"
+  }
 }
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes. 
+  
+ - Moved fitler section from top below the header to side on desktop view because there were not enough filter items to fit across the page and looked great as a side bar. 
+ 
+ 
