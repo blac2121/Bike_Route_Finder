@@ -30,6 +30,14 @@ const checkUnits = () => {
   return unitsValue;
 }
 
+// Kilo Conversion
+const kiloConversion = (distance) => {
+  const kmSum = `${distance}` * 1.60934
+  const roundedKM = Math.round(10 * kmSum) / 10;
+  return roundedKM;
+}
+
+
 // Updates the distance filter label based on Kilos or Miles
 const distanceUnits = () => {
   const fewerTen = document.querySelector("#eleven");
@@ -90,19 +98,18 @@ const listRoutes = (routeData) => {
     resultCardRow1.append(resultRow1Distance)
 
     let routeDistance = document.createElement("p")
-    let routeDistanceName = route.trail_length
+    let routeDistanceLength = route.trail_length
     routeDistance.classList.add("result-distance")
 
     let units = checkUnits();
 
-    if (routeDistanceName === undefined ) {
+    if (routeDistanceLength === undefined ) {
       routeDistance.textContent = `N/A`
     } else if (units === "kilos") {
-      let kmSum = routeDistanceName * 1.60934
-      let roundedKM = Math.round(10 * kmSum) / 10;
-      routeDistance.textContent = `${roundedKM} km`
+      let kmValue = kiloConversion(routeDistanceLength);
+      routeDistance.textContent = `${kmValue} km`
     } else {
-      routeDistance.textContent = `${routeDistanceName} mi`
+      routeDistance.textContent = `${routeDistanceLength} mi`
     }
     
     resultRow1Distance.append(routeDistance)
