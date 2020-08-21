@@ -108,16 +108,16 @@ Sample JSON:
 | CSS: Results section| H | 3hrs| 6hrs | 6hrs |
 | Mobile Optimization | H | 3hrs| 3hrs | 3hrs |
 | Adding Surface Type in filter| M | 3hrs| 30mins | 30mins |
-| Filter by surface and distance | M | 3hrs| 5hrs | 5hrs |
+| Filter by surface and distance | M | 3hrs| 6hrs | 6hrs |
 | Sort API results by trail length | M | 3hrs| 30mins | 30mins |
 | Clear filter | M | 3hrs| 30mins | 30mins |
 | Adding Surface Type to results| M | 5hrs| 30mins | 30mins |
-| No results view: HTML and CSS| M | 5hrs| 5hrs | 5hrs |
+| No results view: HTML and CSS| M | 5hrs| 6hrs | 6hrs |
 | Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
 | Finding API to accept a trail name| L | 3hrs| 0 | - |
 | Hooking up address API| L | 3hrs| 0 | - |
 | Saving trails to try | L | 3hrs| 0 | - |
-| Total | H | 42hrs| 38 | 38 |
+| Total | H | 42hrs| 40hrs | 40hrs |
 
 
 ## Code Snippet
