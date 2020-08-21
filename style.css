@@ -194,6 +194,10 @@ main {
   box-shadow: 1px 2px 3px 1px #08BAF7;
 }
 
+.result-color-pink {
+  box-shadow: 1px 2px 3px 1px #F7086C;
+}
+
 .result-card:hover {
   background-color: #E8E8E6;
 }

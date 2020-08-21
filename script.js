@@ -24,6 +24,11 @@ const noResults = () => {
   noResults.append(noResultsText)
 }
 
+// Gets the value of the miles/kilos dropdown
+const checkUnits = () => {
+  const unitsValue = document.querySelector(".units-selector").value;
+  return unitsValue;
+}
 
 // Builds Result Cards in Miles
 const listRoutes = (routeData) => {
@@ -63,12 +68,18 @@ const listRoutes = (routeData) => {
     let routeDistanceName = route.trail_length
     routeDistance.classList.add("result-distance")
 
-    if (routeDistanceName === undefined) {
+    let units = checkUnits();
+
+    if (routeDistanceName === undefined ) {
       routeDistance.textContent = `N/A`
+    } else if (units === "kilos") {
+      let kmSum = routeDistanceName * 1.60934
+      let roundedKM = Math.round(10 * kmSum) / 10;
+      routeDistance.textContent = `${roundedKM} km`
     } else {
       routeDistance.textContent = `${routeDistanceName} mi`
     }
-
+    
     resultRow1Distance.append(routeDistance)
 
     const resultCardRow2 = document.createElement("div")
@@ -93,83 +104,11 @@ const listRoutes = (routeData) => {
   })
 }
 
-
-// Builds Result Cards in Kilos
-const listRoutesKm = (routeData) => {
-  routeData.forEach((route) => {
-    const routeSectionKM = document.querySelector(".results-section")
-
-    const resultCard = document.createElement("div")
-    resultCard.classList.add("result-card")
-    routeSectionKM.append(resultCard)
-
-    const resultCardRow1 = document.createElement("div")
-    resultCardRow1.classList.add("result-row1")
-    resultCard.append(resultCardRow1)
-
-    const resultRow1Title = document.createElement("div")
-    resultRow1Title.classList.add("result-row1-title")
-    resultCardRow1.append(resultRow1Title)
-
-    const routeTitle = document.createElement("h4")
-    const routeTitleName = route.trail_name
-    routeTitle.classList.add("result-heading")
-    routeTitle.textContent = `${routeTitleName}`
-    resultRow1Title.append(routeTitle)
-
-    const resultRow1Distance = document.createElement("div")
-    resultRow1Distance.classList.add("result-row1-distance")
-    resultCardRow1.append(resultRow1Distance)
-
-    const routeDistanceKM = document.createElement("p")
-    const routeDistanceLenKm = route.trail_length
-    let kmSum = routeDistanceLenKm * 1.60934
-    let roundedKM = Math.round(10 * kmSum) / 10;
-    routeDistanceKM.classList.add("result-distance")
-    routeDistanceKM.textContent = `${roundedKM} km`
-    resultRow1Distance.append(routeDistanceKM)
-
-    const resultCardRow2 = document.createElement("div")
-    resultCardRow2.classList.add("result-row2")
-    resultCard.append(resultCardRow2)
-
-    const routeSurface = document.createElement("p")
-    const routeSurfaceName = route.surface_type
-    routeSurface.classList.add("result-surface")
-    routeSurface.textContent = `${routeSurfaceName}`
-    resultCardRow2.append(routeSurface)
-
-    const resultCardRow3 = document.createElement("div")
-    resultCardRow3.classList.add("result-row3")
-    resultCard.append(resultCardRow3)
-
-    const routeDescription = document.createElement("p")
-    const routeDescriptionName = route.trail_description
-    routeDescription.classList.add("result-description")
-    routeDescription.textContent = `${routeDescriptionName}`
-    resultCardRow3.append(routeDescription)
-  })
-}
-
-// Gets the value of the miles/kilos dropdown
-const checkUnits = () => {
-  const unitsValue = document.querySelector(".units-selector").value;
-  return unitsValue;
-}
-
 // Gets results from the API
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
-
-    const unitsURL = checkUnits();
-
-    if (unitsURL === "kilos") {
-      listRoutesKm(routeData);
-    } else { 
-      listRoutes(routeData);
-    }
     
     if (routeData.length != 0) {
       listRoutes(routeData);
