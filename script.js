@@ -30,6 +30,7 @@ const checkUnits = () => {
   return unitsValue;
 }
 
+// Updates the distance filter label based on Kilos or Miles
 const distanceUnits = () => {
   const fewerTen = document.querySelector("#eleven");
   const tenUp = document.querySelector("#tenUp");
