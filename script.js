@@ -30,6 +30,30 @@ const checkUnits = () => {
   return unitsValue;
 }
 
+const distanceUnits = () => {
+  const fewerTen = document.querySelector("#eleven");
+  const tenUp = document.querySelector("#tenUp");
+  const twentyUp = document.querySelector("#twentyUp");
+  const fiftyUp = document.querySelector("#fiftyUp");
+  const greater100 = document.querySelector("#greater100");
+  
+  let value = checkUnits();
+
+  if (value === "kilos") {
+    fewerTen.innerHTML = fewerTen.innerHTML.replace("Fewer than 10 Miles", "Fewer than 10 Kilos")
+    tenUp.innerHTML = tenUp.innerHTML.replace("10-25 Miles", "10-25 Kilos")
+    twentyUp.innerHTML = twentyUp.innerHTML.replace("25-50 Miles", "25-50 Kilos")
+    fiftyUp.innerHTML = fiftyUp.innerHTML.replace("50-100 Miles", "50-100 Kilos")
+    hundredUp.innerHTML = hundredUp.innerHTML.replace("Greater than 100 Miles", "Greater than 100 Kilos")
+  } else {
+    fewerTen.innerHTML = fewerTen.innerHTML.replace("Fewer than 10 Kilos", "Fewer than 10 Miles")
+    tenUp.innerHTML = tenUp.innerHTML.replace("10-25 Kilos", "10-25 Miles")
+    twentyUp.innerHTML = twentyUp.innerHTML.replace("25-50 Kilos", "25-50 Miles")
+    fiftyUp.innerHTML = fiftyUp.innerHTML.replace("50-100 Kilos", "50-100 Miles")
+    greater100.innerHTML = greater100.innerHTML.replace("Greater than 100 Kilos", "Greater than 100 Miles")
+  }
+}
+
 // Builds Result Cards in Miles
 const listRoutes = (routeData) => {
   routeData.forEach((route, i) => {
@@ -115,6 +139,8 @@ const fetchRoutes = async (url) => {
     } else {
       noResults();
     }
+
+    distanceUnits();
     
   } catch (error) {
     console.log(`Error: ${error}`)
