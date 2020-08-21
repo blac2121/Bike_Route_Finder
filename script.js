@@ -5,30 +5,13 @@ const resultsURL =  (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJ
 const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJKY8lYbv2sCllNIRE4Es2Lq4&$order=trail_length DESC&$where=biking ='Y' AND `)
 const lengthURL = (`trail_length`)
 
-// Builds No Results page
-const noResults = () => {
-  const routeSection = document.querySelector(".results-section")
-
-  const noResults = document.createElement("div")
-  noResults.classList.add("no-results")
-  routeSection.append(noResults) 
-
-  const noResultsTitle = document.createElement("p")
-  noResultsTitle.textContent = "Looks like you're blazing your own trail!"
-  noResultsTitle.classList.add("no-result-title")
-  noResults.append(noResultsTitle)
-
-  const noResultsText = document.createElement("p")
-  noResultsText.textContent = "Please update your search and try again."
-  noResultsText.classList.add("no-result-text")
-  noResults.append(noResultsText)
-}
 
 // Gets the value of the miles/kilos dropdown
 const checkUnits = () => {
   const unitsValue = document.querySelector(".units-selector").value;
   return unitsValue;
 }
+
 
 // Kilo Conversion
 const kiloConversion = (distance) => {
@@ -62,6 +45,27 @@ const distanceUnits = () => {
     greater100.innerHTML = greater100.innerHTML.replace("Greater than 100 Kilos", "Greater than 100 Miles")
   }
 }
+
+
+// Builds No Results page
+const noResults = () => {
+  const routeSection = document.querySelector(".results-section")
+
+  const noResults = document.createElement("div")
+  noResults.classList.add("no-results")
+  routeSection.append(noResults) 
+
+  const noResultsTitle = document.createElement("p")
+  noResultsTitle.textContent = "Looks like you're blazing your own trail!"
+  noResultsTitle.classList.add("no-result-title")
+  noResults.append(noResultsTitle)
+
+  const noResultsText = document.createElement("p")
+  noResultsText.textContent = "Please update your search and try again."
+  noResultsText.classList.add("no-result-text")
+  noResults.append(noResultsText)
+}
+
 
 // Builds Result Cards in Miles
 const listRoutes = (routeData) => {
@@ -230,6 +234,7 @@ const removeResults = () => {
   }
 } 
 
+
 // Runs the filter and constructs the correct URL to be fed through the fetch function
 const runFilter = () => {
   
@@ -277,6 +282,7 @@ filterButton.addEventListener("click", (e) => {
   runFilter();
 })
 
+
 // The filter clear button which returns the filter to all results
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
@@ -284,11 +290,13 @@ clearButton.addEventListener("click", () => {
   fetchRoutes(allResults);
 })
 
+
 // Sort dropdown listener 
 const toggleSort = document.querySelector(".sort-selector")
 toggleSort.addEventListener("change", () => {
   runFilter();
 })
+
 
 // Miles/Kilos dropdown listener 
 const toggleUnits = document.querySelector(".units-selector")

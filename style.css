@@ -183,7 +183,6 @@ main {
   border: 1px solid #e0e0e0;;
   border-radius: 3px;
   cursor: pointer;
-  /* box-shadow: 1px 2px 3px 1px #08F745; */
 }
 
 .result-color-green {
@@ -192,10 +191,6 @@ main {
 
 .result-color-blue {
   box-shadow: 1px 2px 3px 1px #08BAF7;
-}
-
-.result-color-pink {
-  box-shadow: 1px 2px 3px 1px #F7086C;
 }
 
 .result-card:hover {
@@ -246,14 +241,6 @@ footer {
   width: 100%;
   text-align: center;
 } 
-
-/* Tablet Media Query */
-@media (max-width: 768px) {
-  .filter-container {
-    width: 30%;
-    align-items: center;
-  }
-}
 
 /* Mobile Media Query */
 @media (max-width: 568px) {
