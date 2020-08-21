@@ -45,7 +45,7 @@ const distanceUnits = () => {
     tenUp.innerHTML = tenUp.innerHTML.replace("10-25 Miles", "10-25 Kilos")
     twentyUp.innerHTML = twentyUp.innerHTML.replace("25-50 Miles", "25-50 Kilos")
     fiftyUp.innerHTML = fiftyUp.innerHTML.replace("50-100 Miles", "50-100 Kilos")
-    hundredUp.innerHTML = hundredUp.innerHTML.replace("Greater than 100 Miles", "Greater than 100 Kilos")
+    greater100.innerHTML = greater100.innerHTML.replace("Greater than 100 Miles", "Greater than 100 Kilos")
   } else {
     fewerTen.innerHTML = fewerTen.innerHTML.replace("Fewer than 10 Kilos", "Fewer than 10 Miles")
     tenUp.innerHTML = tenUp.innerHTML.replace("10-25 Kilos", "10-25 Miles")
@@ -155,20 +155,38 @@ body.onload = fetchRoutes(allResults);
 // Gets distance filter value and turns it into a URL to be fed into the filter
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
+
+  let value = checkUnits();
+
   if (distanceValue === "all-distances") {
     return "all-distances";
-  } else if (distanceValue === "11") {
-    return (`${lengthURL}<${distanceValue}`)
-  } else if (distanceValue === "10to26") {
-    return (`${lengthURL} between '10' and '25'`)
-  } else if (distanceValue === "25to51") {
-    return (`${lengthURL} between '25' and '51'`)
-  } else if (distanceValue === "50to101") {
-    return (`${lengthURL} between '50' and '101'`)
+  } else if (value === "kilos") {
+    if (distanceValue === "11") {
+      return (`${lengthURL}<'6'`)
+    } else if (distanceValue === "10to26") {
+      return (`${lengthURL} between '6' and '16'`)
+    } else if (distanceValue === "25to51") {
+      return (`${lengthURL} between '15' and '32'`)
+    } else if (distanceValue === "50to101") {
+      return (`${lengthURL} between '31' and '63'`)
+    } else {
+      return (`${lengthURL}>'63'`)  // 
+    }
   } else {
-    return (`${lengthURL}>${distanceValue}`)
-  }  
+    if (distanceValue === "11") {
+      return (`${lengthURL}<${distanceValue}`)
+    } else if (distanceValue === "10to26") {
+      return (`${lengthURL} between '10' and '25'`)
+    } else if (distanceValue === "25to51") {
+      return (`${lengthURL} between '25' and '51'`)
+    } else if (distanceValue === "50to101") {
+      return (`${lengthURL} between '50' and '101'`)
+    } else {
+      return (`${lengthURL}>${distanceValue}`)
+    }
+  }
 }
+
 
 // Gets surface filter value and turns it into a URL to be fed into the filter
 const checkSurfaceFilter = () => {
