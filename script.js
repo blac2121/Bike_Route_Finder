@@ -287,7 +287,15 @@ filterButton.addEventListener("click", (e) => {
 const clearButton = document.querySelector(".clear-button")
 clearButton.addEventListener("click", () => {
   removeResults();
-  fetchRoutes(allResults);
+  
+  let sortValue = checkSort();
+  
+  if (sortValue === "asc") {
+    fetchRoutes(allResults);
+  } else {
+    fetchRoutes(allResultsDesc);
+  }
+  
 })
 
 
