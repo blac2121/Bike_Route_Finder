@@ -242,6 +242,17 @@ footer {
   text-align: center;
 } 
 
+a:visited { 
+  text-decoration: none; 
+  color: #0000EE; 
+}
+
+a:hover { 
+  text-decoration: none; 
+  color: #0000EE; 
+}
+
+
 /* Mobile Media Query */
 @media (max-width: 568px) {
   .aside-main-container {
