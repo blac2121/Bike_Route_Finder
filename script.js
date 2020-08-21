@@ -67,7 +67,7 @@ const noResults = () => {
 }
 
 
-// Builds Result Cards in Miles
+// Builds Result Cards
 const listRoutes = (routeData) => {
   routeData.forEach((route, i) => {
   
@@ -163,7 +163,7 @@ const fetchRoutes = async (url) => {
 const body = document.querySelector("body");
 body.onload = fetchRoutes(allResults);
 
-// Gets distance filter value and turns it into a URL to be fed into the filter
+// Gets distance filter value and turns it into a URL to be fed through the filter
 const checkDistanceFilter = () => {
   const distanceValue = document.querySelector(".distance-selector").value;
 
@@ -173,15 +173,15 @@ const checkDistanceFilter = () => {
     return "all-distances";
   } else if (value === "kilos") {
     if (distanceValue === "11") {
-      return (`${lengthURL}<'6'`)
+      return (`${lengthURL}<'6.2'`)
     } else if (distanceValue === "10to26") {
-      return (`${lengthURL} between '6' and '16'`)
+      return (`${lengthURL} between '6.2' and '16'`)
     } else if (distanceValue === "25to51") {
-      return (`${lengthURL} between '15' and '32'`)
+      return (`${lengthURL} between '15.5' and '32'`)
     } else if (distanceValue === "50to101") {
-      return (`${lengthURL} between '31' and '63'`)
+      return (`${lengthURL} between '31.6' and '63'`)
     } else {
-      return (`${lengthURL}>'63'`)  // 
+      return (`${lengthURL}>'62.1'`)  // 
     }
   } else {
     if (distanceValue === "11") {
@@ -199,7 +199,7 @@ const checkDistanceFilter = () => {
 }
 
 
-// Gets surface filter value and turns it into a URL to be fed into the filter
+// Gets surface filter value and turns it into a URL to be fed through the filter
 const checkSurfaceFilter = () => {
   const surfaceValue = document.querySelectorAll("input[class=surface-checkbox]:checked");
   let checkedSurfaces = [];
@@ -289,7 +289,7 @@ clearButton.addEventListener("click", () => {
   removeResults();
   
   let sortValue = checkSort();
-  
+
   if (sortValue === "asc") {
     fetchRoutes(allResults);
   } else {
