@@ -88,7 +88,7 @@ Sample JSON:
 |Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
 |Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
 |Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / Picking KM or MI| Complete
-|Thurs, Aug 20| No results / Show more Description / generate multiple card colors / get address / Saving trails to try | Partial
+|Thurs, Aug 20| Done: No results / Done: generate multiple card colors / Show more Description / get address / Saving trails to try | Partial
 |Fri, Aug 21| Presentations | Incomplete
 
 ## Priority Matrix
