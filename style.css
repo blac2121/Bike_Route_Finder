@@ -262,8 +262,8 @@ a:hover {
   }
 
   .banner-container {
-    background: none;
-    height: 35px;
+    background-size: cover;
+    height: 200px;
   }
 
   .filter-container {
