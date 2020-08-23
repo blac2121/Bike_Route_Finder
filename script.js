@@ -137,6 +137,16 @@ const listRoutes = (routeData) => {
     routeDescription.classList.add("result-description")
     routeDescription.textContent = `${routeDescriptionName}`
     resultCardRow3.append(routeDescription)
+
+    const resultCardRow4 = document.createElement("div")
+    resultCardRow4.classList.add("result-row4")
+    resultCard.append(resultCardRow4)
+
+    const readMore = document.createElement("button")
+    readMore.classList.add("read-more-button")
+    const readMoreText = document.createTextNode("Read More")
+    readMore.appendChild(readMoreText)
+    resultCardRow4.appendChild(readMore)
   })
 }
 
@@ -311,4 +321,13 @@ const toggleUnits = document.querySelector(".units-selector")
 toggleUnits.addEventListener("change", () => {
   runFilter();
 })
+
+
+document.addEventListener("click", (e) => {
+  const descHidden = document.querySelector(".result-description")
+  if (e.target.matches(".read-more-button")) {
+    descHidden.style.display = "block";
+  }
+})
+
 

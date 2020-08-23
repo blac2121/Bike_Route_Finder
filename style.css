@@ -233,6 +233,10 @@ main {
 .result-description {
   padding-left: 50px;
   padding-right: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 footer {
