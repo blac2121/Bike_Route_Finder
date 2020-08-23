@@ -81,10 +81,10 @@ const listRoutes = (routeData) => {
     routeSection.append(resultCard)
 
     if (i % 2 === 0) {
-      resultCard.classList.add("result-color-green") 
+      resultCard.classList.add("result-color-green")
     } else if (i % 2 != 0) {
       resultCard.classList.add("result-color-blue")
-    }  
+    }
   
     const resultCardRow1 = document.createElement("div")
     resultCardRow1.classList.add("result-row1")
@@ -110,7 +110,7 @@ const listRoutes = (routeData) => {
 
     let units = checkUnits();
 
-    if (routeDistanceLength === undefined ) {
+    if (routeDistanceLength === undefined) {
       routeDistance.textContent = `N/A`
     } else if (units === "kilos") {
       let kmValue = kiloConversion(routeDistanceLength);
@@ -147,14 +147,19 @@ const listRoutes = (routeData) => {
 
     resultsArr.push(route);
 
-    const readMore = document.createElement("button")
-    readMore.classList.add("read-more-button")
-    const readMoreText = document.createTextNode("Read More")
-    readMore.appendChild(readMoreText)
-    resultCardRow4.appendChild(readMore)  
-    readMore.addEventListener('click', () => {
-      resultsArr.indexOf(routeDescription.style.display = "block")
-    })
+    if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
+      const readMore = document.createElement("button")
+      readMore.classList.add("read-more-button")
+      const readMoreText = document.createTextNode("Read More")
+      readMore.appendChild(readMoreText)
+      resultCardRow4.appendChild(readMore)  
+
+      readMore.addEventListener('click', () => {
+        resultsArr.indexOf(routeDescription.style.display = "block")
+      })
+    }
+
+
   })
 }
 
