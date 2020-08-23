@@ -326,7 +326,7 @@ toggleUnits.addEventListener("change", () => {
 document.addEventListener("click", (e) => {
   const descHidden = document.querySelector(".result-description")
   if (e.target.matches(".read-more-button")) {
-    descHidden.style.display = "block";
+    (this)descHidden.style.display = "block";
   }
 })
 
