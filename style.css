@@ -255,6 +255,11 @@ a:hover {
 
 /* Mobile Media Query */
 @media (max-width: 568px) {
+  h1 {
+    width: 75%;
+    margin: auto;
+  }
+
   .aside-main-container {
     display: flex;
     flex-direction: column;
@@ -286,9 +291,9 @@ a:hover {
     flex-direction: column;
   }
 
-  .result-row1-distance {
+  /* .result-row1-distance {
     padding-left: 50px;
-  } 
+  }  */
 
   .result-row2 {
     flex-grow: 1;
@@ -297,4 +302,17 @@ a:hover {
     justify-content: space-between;
     font-style: italic;
   }
+
+  .result-heading,
+  .result-distance,
+  .result-surface,
+  .result-description {
+    padding: 5px 15px;
+    margin: 8px 3px;
+  }
+
 }
+
+
+
+

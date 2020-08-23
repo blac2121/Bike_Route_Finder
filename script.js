@@ -6,6 +6,7 @@ const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJ
 const lengthURL = (`trail_length`)
 
 
+
 // Gets the value of the miles/kilos dropdown
 const checkUnits = () => {
   const unitsValue = document.querySelector(".units-selector").value;
@@ -65,7 +66,6 @@ const noResults = () => {
   noResultsText.classList.add("no-result-text")
   noResults.append(noResultsText)
 }
-
 
 // Builds Result Cards
 const listRoutes = (routeData) => {
@@ -311,3 +311,4 @@ const toggleUnits = document.querySelector(".units-selector")
 toggleUnits.addEventListener("change", () => {
   runFilter();
 })
+
