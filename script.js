@@ -67,6 +67,9 @@ const noResults = () => {
   noResults.append(noResultsText)
 }
 
+const resultsArr = []; 
+
+
 // Builds Result Cards
 const listRoutes = (routeData) => {
   routeData.forEach((route, i) => {
@@ -142,20 +145,26 @@ const listRoutes = (routeData) => {
     resultCardRow4.classList.add("result-row4")
     resultCard.append(resultCardRow4)
 
+    resultsArr.push(route);
+
     const readMore = document.createElement("button")
     readMore.classList.add("read-more-button")
     const readMoreText = document.createTextNode("Read More")
     readMore.appendChild(readMoreText)
-    resultCardRow4.appendChild(readMore)
+    resultCardRow4.appendChild(readMore)  
+    readMore.addEventListener('click', () => {
+      resultsArr.indexOf(routeDescription.style.display = "block")
+    })
   })
 }
+
 
 // Gets results from the API
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
-    
+
     if (routeData.length != 0) {
       listRoutes(routeData);
     } else {
@@ -321,13 +330,3 @@ const toggleUnits = document.querySelector(".units-selector")
 toggleUnits.addEventListener("change", () => {
   runFilter();
 })
-
-
-document.addEventListener("click", (e) => {
-  const descHidden = document.querySelector(".result-description")
-  if (e.target.matches(".read-more-button")) {
-    descHidden.style.display = "block";
-  }
-})
-
-
