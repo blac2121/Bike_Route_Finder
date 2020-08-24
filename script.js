@@ -6,6 +6,7 @@ const descResults = (`https://data.ny.gov/resource/7bg2-3faq.json?$$app_token=rJ
 const lengthURL = (`trail_length`)
 
 
+
 // Gets the value of the miles/kilos dropdown
 const checkUnits = () => {
   const unitsValue = document.querySelector(".units-selector").value;
@@ -66,6 +67,8 @@ const noResults = () => {
   noResults.append(noResultsText)
 }
 
+const resultsArr = []; 
+
 
 // Builds Result Cards
 const listRoutes = (routeData) => {
@@ -78,10 +81,10 @@ const listRoutes = (routeData) => {
     routeSection.append(resultCard)
 
     if (i % 2 === 0) {
-      resultCard.classList.add("result-color-green") 
+      resultCard.classList.add("result-color-green")
     } else if (i % 2 != 0) {
       resultCard.classList.add("result-color-blue")
-    }  
+    }
   
     const resultCardRow1 = document.createElement("div")
     resultCardRow1.classList.add("result-row1")
@@ -107,7 +110,7 @@ const listRoutes = (routeData) => {
 
     let units = checkUnits();
 
-    if (routeDistanceLength === undefined ) {
+    if (routeDistanceLength === undefined) {
       routeDistance.textContent = `N/A`
     } else if (units === "kilos") {
       let kmValue = kiloConversion(routeDistanceLength);
@@ -137,15 +140,52 @@ const listRoutes = (routeData) => {
     routeDescription.classList.add("result-description")
     routeDescription.textContent = `${routeDescriptionName}`
     resultCardRow3.append(routeDescription)
+
+    const resultCardRow4 = document.createElement("div")
+    resultCardRow4.classList.add("result-row4")
+    resultCard.append(resultCardRow4)
+
+    resultsArr.push(route);
+    
+    if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
+      const readMore = document.createElement("button")
+      readMore.classList.add("read-more-button")
+      const readMoreText = document.createTextNode("Read More")
+      readMore.appendChild(readMoreText)
+      resultCardRow4.appendChild(readMore)  
+
+      readMore.addEventListener('click', () => {
+        resultsArr.indexOf(routeDescription.style.display = "block")
+      })
+    }
   })
+  return resultsArr;
 }
+
+// Check for Resize
+// const checkResize = () => {
+//   const routeDescription = document.querySelector(".result-description")
+//   const readMore = document.querySelector(".read-more-button")
+
+//   for (let i = 0; i < resultsArr.length; i++) {
+//     if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
+//       readMore.style.display === "block"
+//       readMore.addEventListener('click', () => {
+//         resultsArr.indexOf(routeDescription.style.display = "block")
+//       })
+//     } else {
+//       readMore.style.display === "none"
+//     }
+//   }
+// }
+
 
 // Gets results from the API
 const fetchRoutes = async (url) => {
   try {
     const response = await axios.get(url)
     const routeData = response.data
-    
+
     if (routeData.length != 0) {
       listRoutes(routeData);
     } else {
@@ -162,6 +202,8 @@ const fetchRoutes = async (url) => {
 // Renders all results upon page load to create a landing page experience
 const body = document.querySelector("body");
 body.onload = fetchRoutes(allResults);
+
+// body.onresize = checkResize();
 
 // Gets distance filter value and turns it into a URL to be fed through the filter
 const checkDistanceFilter = () => {
