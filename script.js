@@ -146,7 +146,7 @@ const listRoutes = (routeData) => {
     resultCard.append(resultCardRow4)
 
     resultsArr.push(route);
-
+    
     if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
       const readMore = document.createElement("button")
       readMore.classList.add("read-more-button")
@@ -158,10 +158,26 @@ const listRoutes = (routeData) => {
         resultsArr.indexOf(routeDescription.style.display = "block")
       })
     }
-
-
   })
+  return resultsArr;
 }
+
+// Check for Resize
+// const checkResize = () => {
+//   const routeDescription = document.querySelector(".result-description")
+//   const readMore = document.querySelector(".read-more-button")
+
+//   for (let i = 0; i < resultsArr.length; i++) {
+//     if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
+//       readMore.style.display === "block"
+//       readMore.addEventListener('click', () => {
+//         resultsArr.indexOf(routeDescription.style.display = "block")
+//       })
+//     } else {
+//       readMore.style.display === "none"
+//     }
+//   }
+// }
 
 
 // Gets results from the API
@@ -186,6 +202,8 @@ const fetchRoutes = async (url) => {
 // Renders all results upon page load to create a landing page experience
 const body = document.querySelector("body");
 body.onload = fetchRoutes(allResults);
+
+// body.onresize = checkResize();
 
 // Gets distance filter value and turns it into a URL to be fed through the filter
 const checkDistanceFilter = () => {

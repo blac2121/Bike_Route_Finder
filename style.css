@@ -241,6 +241,7 @@ main {
 }
 
 .result-row4 {
+  display: block;
   text-align: center;
 }
 
