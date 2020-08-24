@@ -78,7 +78,8 @@ hr {
 
 .distance-selector:hover, 
 .sort-selector:hover,
-.units-selector:hover {
+.units-selector:hover,
+.read-more-button:hover {
   background-color: #E8E8E6;
 }
 
@@ -237,6 +238,23 @@ main {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+.result-row4 {
+  text-align: center;
+}
+
+.read-more-button {
+  margin: 18px 0 10px 0;
+  font-size: 14px; 
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #F7F7F6;
+  color: gray;
+  border: 1px solid #e0e0e0;
+  margin: 5px 0 10px 0;
+  box-shadow: 1px 3px 5px 1px #e0e0e0;
 }
 
 footer {
