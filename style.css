@@ -78,7 +78,8 @@ hr {
 
 .distance-selector:hover, 
 .sort-selector:hover,
-.units-selector:hover {
+.units-selector:hover,
+.read-more-button:hover {
   background-color: #E8E8E6;
 }
 
@@ -119,8 +120,6 @@ hr {
   background-color: #E8E8E6;
 }
 
-
-/* Results Section */
 
 main {
   width: 80%;
@@ -233,6 +232,28 @@ main {
 .result-description {
   padding-left: 50px;
   padding-right: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.result-row4 {
+  display: block;
+  text-align: center;
+}
+
+.read-more-button {
+  margin: 18px 0 10px 0;
+  font-size: 14px; 
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #F7F7F6;
+  color: gray;
+  border: 1px solid #e0e0e0;
+  margin: 5px 0 10px 0;
+  box-shadow: 1px 3px 5px 1px #e0e0e0;
 }
 
 footer {
@@ -255,6 +276,11 @@ a:hover {
 
 /* Mobile Media Query */
 @media (max-width: 568px) {
+  h1 {
+    width: 75%;
+    margin: auto;
+  }
+
   .aside-main-container {
     display: flex;
     flex-direction: column;
@@ -286,9 +312,9 @@ a:hover {
     flex-direction: column;
   }
 
-  .result-row1-distance {
+  /* .result-row1-distance {
     padding-left: 50px;
-  } 
+  }  */
 
   .result-row2 {
     flex-grow: 1;
@@ -297,4 +323,16 @@ a:hover {
     justify-content: space-between;
     font-style: italic;
   }
+
+  .result-heading,
+  .result-distance,
+  .result-surface,
+  .result-description {
+    padding: 5px 15px;
+    margin: 8px 3px;
+  }
 }
+
+
+
+

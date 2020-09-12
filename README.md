@@ -72,13 +72,10 @@ Sample JSON:
 
 - Display data with trail description and surface-type
 - Set up filter to filter surface type
-- Sort data set by trail_length (default was by trail name)
+- Sort data set by trail length (default was by trail name)
 - No results
 - landing page of all results
 - Allow user to choose between MI and KMs (currently is in MI)
-- Display a set amount of description characters and implement a "read more" concept
-- High risk: Use local storage to save paths users want to try
-- High risk: Add second API to provide trail address (bike API does not supply address or location so this might be impossible)
 
 ## Goals: Project Schedule
 
@@ -88,8 +85,8 @@ Sample JSON:
 |Mon, Aug 17|Project approval / API: Adding filter to feed to API| Complete
 |Tues, Aug 18|Base HTML: Header, Footer, search section, results section| Complete
 |Wed, Aug 19|Mobile Optimization / Filter Surface Type/ CSS: Header, Footer, search section, results section / Picking KM or MI| Complete
-|Thurs, Aug 20| Done: No results / Done: generate multiple card colors / Show more Description / get address / Saving trails to try | Partial
-|Fri, Aug 21| Presentations | Incomplete
+|Thurs, Aug 20| Done: No results / Done: generate multiple card colors | Complete
+|Fri, Aug 21| Presentations | Complete
 
 ## Priority Matrix
 
@@ -114,9 +111,6 @@ Sample JSON:
 | Adding Surface Type to results| M | 5hrs| 30mins | 30mins |
 | No results view: HTML and CSS| M | 5hrs| 6hrs | 6hrs |
 | Filtering with KM or MI| L | 3hrs| 2hrs | 2hrs |
-| Finding API to accept a trail name| L | 3hrs| 0 | - |
-| Hooking up address API| L | 3hrs| 0 | - |
-| Saving trails to try | L | 3hrs| 0 | - |
 | Total | H | 42hrs| 40hrs | 40hrs |
 
 
