@@ -144,22 +144,7 @@ const listRoutes = (routeData) => {
     const resultCardRow4 = document.createElement("div")
     resultCardRow4.classList.add("result-row4")
     resultCard.append(resultCardRow4)
-
-    resultsArr.push(route);
-    
-    if ((routeDescription.offsetHeight < routeDescription.scrollHeight) === true) {
-      const readMore = document.createElement("button")
-      readMore.classList.add("read-more-button")
-      const readMoreText = document.createTextNode("Read More")
-      readMore.appendChild(readMoreText)
-      resultCardRow4.appendChild(readMore)  
-
-      readMore.addEventListener('click', () => {
-        resultsArr.indexOf(routeDescription.style.display = "block")
-      })
-    }
   })
-  return resultsArr;
 }
 
 
